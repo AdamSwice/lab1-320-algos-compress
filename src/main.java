@@ -9,8 +9,9 @@ import java.util.Scanner;
 
 public class main {
     public static void main(String[] args) {
-        String filePath = "C:/Users/Swicy/Desktop/lab1-320-algos-compress/src/exemple.txt";
-        String newFilePath = "C:/Users/Swicy/Desktop/lab1-320-algos-compress/src/compressedlzw.txt";
+        String filePath = "C:/Users/Swicy/Desktop/lab1-320-algos-compress/src/loremipsum.txt";
+        String compressedFilePath = "C:/Users/Swicy/Desktop/lab1-320-algos-compress/src/compressedlzw.txt";
+        String decompressedFilePath = "C:/Users/Swicy/Desktop/lab1-320-algos-compress/src/decompressedlzw.txt";
         String convertedTxtFile = Utilitaire.readtxt(filePath);
 
         Scanner algoChoisi = new Scanner(System.in);
@@ -19,8 +20,6 @@ public class main {
         System.out.println("Voulez-vous effectuer un compress ou un decompress?");
         String choixCompress = algoChoisi.nextLine();
 
-        Utilitaire.validator(choixAlgo, choixCompress, convertedTxtFile, newFilePath);
+        Utilitaire.validator(choixAlgo, choixCompress, convertedTxtFile, compressedFilePath, decompressedFilePath);
     }
-
-
 }

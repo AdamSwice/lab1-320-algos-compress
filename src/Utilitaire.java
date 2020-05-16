@@ -1,5 +1,4 @@
 import Strategie.StrategieLZW;
-
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -7,29 +6,30 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.stream.Stream;
 
 public class Utilitaire {
-    public static void validator(String choixAlgo, String choixCompress, String data, String newFilePath) {
+    public static void validator(String choixAlgo, String choixCompress, String data, String compressedFilePath, String decompressedFilePath) {
         if ("compress".equalsIgnoreCase(choixCompress)) {
-            switch (choixAlgo) {
-                case "lzw":
-                    StrategieLZW lzw = new StrategieLZW();
-                    long startTime = System.currentTimeMillis();
-                    writeToFile(lzw.compress(data).toString(), newFilePath);
-                    long endTime = System.currentTimeMillis();
-                    System.out.println("duree: " + (endTime - startTime) + "ms");
-                    break;
-                case "huff":
-                    //généré objet qui implemente huff
-                    break;
-                case "opt":
-                    //généré objet qui implemente algo opt
-                    break;
-                default:
-                    System.out.println("L'algo que vous avez choisi n'est pas valide");
-                    break;
+            if ("lzw".equalsIgnoreCase(choixAlgo)) {
+                long startTime = System.currentTimeMillis();
+                Utilitaire.writeToFile(StrategieLZW.compress(data).toString(), compressedFilePath);
+                long endTime = System.currentTimeMillis();
+                System.out.println("duree: " + (endTime - startTime) + "ms");
             }
+        } else if ("decompress".equalsIgnoreCase(choixCompress)) {
+            if ("lzw".equalsIgnoreCase(choixAlgo)) {
+                long startTime = System.currentTimeMillis();
+                String compressedData = readtxt(compressedFilePath);
+                Utilitaire.writeToFile(StrategieLZW.decompress(convertStringToList(compressedData)), decompressedFilePath);
+                long endTime = System.currentTimeMillis();
+                System.out.println("duree: " + (endTime - startTime) + "ms");
+            }
+        } else {
+            System.out.println();
         }
     }
 
@@ -44,6 +44,9 @@ public class Utilitaire {
     }
 
     private static void writeToFile(String data, String path) {
+        data = data.replace("[", "");
+        data = data.replace("]", "");
+
         try {
             File compressedFile = new File(path);
             if (!compressedFile.exists()){
@@ -58,5 +61,13 @@ public class Utilitaire {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+    private static List<Integer> convertStringToList(String data) {
+        List<String> stringList = new ArrayList<String>(Arrays.asList(data.split(",")));
+        List<Integer> intList = new ArrayList<>();
+        for (String string : stringList){
+            intList.add(Integer.valueOf(string.replace(" ","").replace("\n","")));
+        }
+        return intList;
     }
 }
