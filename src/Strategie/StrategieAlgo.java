@@ -1,9 +1,9 @@
 package Strategie;
 
 import java.io.File;
+import java.util.List;
 
 public interface StrategieAlgo {
-    File compress(File file);
-
+    List<Integer> compress(String data);
     File decompress(File file);
 }
