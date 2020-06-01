@@ -9,9 +9,9 @@ import java.util.Scanner;
 
 public class main {
     public static void main(String[] args) {
-        String filePath = "C:/Users/Swicy/Desktop/lab1-320-algos-compress/src/loremipsum.txt";
-        String compressedFilePath = "C:/Users/Swicy/Desktop/lab1-320-algos-compress/src/compressedlzw.txt";
-        String decompressedFilePath = "C:/Users/Swicy/Desktop/lab1-320-algos-compress/src/decompressedlzw.txt";
+        String filePath = "D:/lab1-320-algos-compress/src/loremipsum.txt";
+        String compressedFilePath = "D:/lab1-320-algos-compress/src/compressedHuff.txt";
+        String decompressedFilePath = "D:/lab1-320-algos-compress/src/decompressedHuff.txt";
         String convertedTxtFile = Utilitaire.readtxt(filePath);
 
         Scanner algoChoisi = new Scanner(System.in);
