@@ -9,17 +9,12 @@ import java.util.Scanner;
 
 public class main {
     public static void main(String[] args) {
-        String filePath = "D:/lab1-320-algos-compress/src/loremipsum.txt";
-        String compressedFilePath = "D:/lab1-320-algos-compress/src/compressedHuff.txt";
-        String decompressedFilePath = "D:/lab1-320-algos-compress/src/decompressedHuff.txt";
-        String convertedTxtFile = Utilitaire.readtxt(filePath);
 
-        Scanner algoChoisi = new Scanner(System.in);
-        System.out.println("Choisissez un algorithme: lzw, huff ou opt.");
-        String choixAlgo = algoChoisi.nextLine();
-        System.out.println("Voulez-vous effectuer un compress ou un decompress?");
-        String choixCompress = algoChoisi.nextLine();
+        String choixAlgo = args[0].replace("-","");
+        String choixCompress = args[1].replace("-","");
+        String fileIn = args[2];
+        String fileOut = args[3];
 
-        Utilitaire.validator(choixAlgo, choixCompress, convertedTxtFile, compressedFilePath, decompressedFilePath);
+        Utilitaire.validator(choixAlgo, choixCompress, fileIn, fileOut);
     }
 }
