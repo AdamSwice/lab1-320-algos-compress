@@ -7,46 +7,54 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Stream;
 
 public class Utilitaire {
-    public static void validator(String choixAlgo, String choixCompress, String data, String compressedFilePath, String decompressedFilePath) {
-//        if ("compress".equalsIgnoreCase(choixCompress)) {
-//            if ("lzw".equalsIgnoreCase(choixAlgo)) {
-//                long startTime = System.currentTimeMillis();
-//                Utilitaire.writeToFile(StrategieLZW.compress(data).toString(), compressedFilePath);
-//                long endTime = System.currentTimeMillis();
-//                System.out.println("duree: " + (endTime - startTime) + "ms");
-//            }
-//            else if ("huff".equalsIgnoreCase(choixAlgo)) {
-//                long startTime = System.currentTimeMillis();
-//                Utilitaire.write(StrategieHuff.compress(data));
-//                long endTime = System.currentTimeMillis();
-//                System.out.println("duree: " + (endTime - startTime) + "ms");
-//            }
-//        } else if ("decompress".equalsIgnoreCase(choixCompress)) {
-//            if ("lzw".equalsIgnoreCase(choixAlgo)) {
-//                long startTime = System.currentTimeMillis();
-//                String compressedData = readtxt(compressedFilePath);
-//                Utilitaire.writeToFile(StrategieLZW.decompress(convertStringToList(compressedData)), decompressedFilePath);
-//                long endTime = System.currentTimeMillis();
-//                System.out.println("duree: " + (endTime - startTime) + "ms");
-//            }
-//            else if ("huff".equalsIgnoreCase(choixAlgo)) {
-//                long startTime = System.currentTimeMillis();
-//                ArrayList<Object> array = read();
-//                long endTime = System.currentTimeMillis();
-//                Utilitaire.writeToFile(StrategieHuff.decompress(array), decompressedFilePath);
-//                System.out.println("duree: " + (endTime - startTime) + "ms");
-//            }
-//        } else {
-//            System.out.println();
-//        }
+    public static void validator(String choixAlgo, String choixCompress, String fileIn, String fileOut) {
+        if ("c".equalsIgnoreCase(choixCompress)) {
+            if ("lzw".equalsIgnoreCase(choixAlgo)) {
+                System.out.println("Choix d'algo:" + choixAlgo);
+                System.out.println("Choix de compress:" + choixCompress);
+                System.out.println("Choix de fileIn:" + fileIn);
+                System.out.println("Choix de fileOut:" + fileOut);
+                long startTime = System.currentTimeMillis();
+                String decompressedData = convertTxtToString(fileIn);
+                Utilitaire.writeToFile(StrategieLZW.compress(decompressedData).toString(), fileOut);
+                long endTime = System.currentTimeMillis();
+                System.out.println("duree: " + (endTime - startTime) + "ms");
+            }
+/*            else if ("huff".equalsIgnoreCase(choixAlgo)) {
+                long startTime = System.currentTimeMillis();
+                Utilitaire.write(StrategieHuff.compress(data));
+                long endTime = System.currentTimeMillis();
+                System.out.println("duree: " + (endTime - startTime) + "ms");
+            }*/ else {
+                System.out.println("Erreur dans le choix d'algorithme de compression, vérifiez l'orthographe.");
+            }
+        } else if ("d".equalsIgnoreCase(choixCompress)) {
+            if ("lzw".equalsIgnoreCase(choixAlgo)) {
+                long startTime = System.currentTimeMillis();
+                String compressedData = convertTxtToString(fileIn);
+                Utilitaire.writeToFile(StrategieLZW.decompress(convertStringToList(compressedData)), fileOut);
+                long endTime = System.currentTimeMillis();
+                System.out.println("duree: " + (endTime - startTime) + "ms");
+            }
+            /*else if ("huff".equalsIgnoreCase(choixAlgo)) {
+                long startTime = System.currentTimeMillis();
+                ArrayList<Object> array = read();
+                long endTime = System.currentTimeMillis();
+                Utilitaire.writeToFile(StrategieHuff.decompress(array), decompressedFilePath);
+                System.out.println("duree: " + (endTime - startTime) + "ms");
+            }*/ else {
+                System.out.println("Erreur dans le choix d'algorithme de compression, vérifiez l'orthographe.");
+            }
+        } else {
+            System.out.println("Erreur dans le choix de compression ou de decompression");
+        }
     }
 
-    public static String readtxt(String filePath) {
+    public static String convertTxtToString(String filePath) {
         StringBuilder stringBuilder = new StringBuilder();
         try (Stream<String> stream = Files.lines (Paths.get(filePath), StandardCharsets.UTF_8)) {
             stream.forEach( string -> stringBuilder.append(string).append("\n"));
