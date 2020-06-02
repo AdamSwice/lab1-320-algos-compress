@@ -1,4 +1,4 @@
-import Strategie.StrategieHuff;
+import Bit.BitInputStream;
 import Strategie.StrategieLZW;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -30,7 +30,8 @@ public class Utilitaire {
                 }
             } else if ("d".equalsIgnoreCase(choixCompress)) {
                 if ("lzw".equalsIgnoreCase(choixAlgo)) {
-                    FileInputStream inputStream = new FileInputStream(fileIn);
+                    //FileInputStream inputStream = new FileInputStream(fileIn);
+                    BitInputStream inputStream = new BitInputStream(fileIn);
                     StrategieLZW.decompress(inputStream, fileOut);
                 }
             /*else if ("huff".equalsIgnoreCase(choixAlgo)) {
