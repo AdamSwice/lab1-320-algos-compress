@@ -1,6 +1,7 @@
 import Strategie.StrategieHuff;
 import Strategie.StrategieLZW;
-
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -12,46 +13,39 @@ import java.util.stream.Stream;
 
 public class Utilitaire {
     public static void validator(String choixAlgo, String choixCompress, String fileIn, String fileOut) {
-        if ("c".equalsIgnoreCase(choixCompress)) {
-            if ("lzw".equalsIgnoreCase(choixAlgo)) {
-                System.out.println("Choix d'algo:" + choixAlgo);
-                System.out.println("Choix de compress:" + choixCompress);
-                System.out.println("Choix de fileIn:" + fileIn);
-                System.out.println("Choix de fileOut:" + fileOut);
-                long startTime = System.currentTimeMillis();
-                String decompressedData = convertTxtToString(fileIn);
-                Utilitaire.writeToFile(StrategieLZW.compress(decompressedData).toString(), fileOut);
-                long endTime = System.currentTimeMillis();
-                System.out.println("duree: " + (endTime - startTime) + "ms");
-            }
+        try {
+            if ("c".equalsIgnoreCase(choixCompress)) {
+                if ("lzw".equalsIgnoreCase(choixAlgo)) {
+                    File toCompress = new File(fileIn);
+                    FileReader fileReader = new FileReader(toCompress);
+                    StrategieLZW.compress(fileReader, fileOut);
+                }
 /*            else if ("huff".equalsIgnoreCase(choixAlgo)) {
                 long startTime = System.currentTimeMillis();
                 Utilitaire.write(StrategieHuff.compress(data));
                 long endTime = System.currentTimeMillis();
                 System.out.println("duree: " + (endTime - startTime) + "ms");
             }*/ else {
-                System.out.println("Erreur dans le choix d'algorithme de compression, vérifiez l'orthographe.");
-            }
-        } else if ("d".equalsIgnoreCase(choixCompress)) {
-            if ("lzw".equalsIgnoreCase(choixAlgo)) {
-                long startTime = System.currentTimeMillis();
-                String compressedData = convertTxtToString(fileIn);
-                Utilitaire.writeToFile(StrategieLZW.decompress(convertStringToList(compressedData)), fileOut);
-                long endTime = System.currentTimeMillis();
-                System.out.println("duree: " + (endTime - startTime) + "ms");
-            }
+                    System.out.println("Erreur dans le choix d'algorithme de compression, vérifiez l'orthographe.");
+                }
+            } else if ("d".equalsIgnoreCase(choixCompress)) {
+                if ("lzw".equalsIgnoreCase(choixAlgo)) {
+                    FileInputStream inputStream = new FileInputStream(fileIn);
+                    StrategieLZW.decompress(inputStream, fileOut);
+                }
             /*else if ("huff".equalsIgnoreCase(choixAlgo)) {
                 long startTime = System.currentTimeMillis();
                 ArrayList<Object> array = read();
                 long endTime = System.currentTimeMillis();
                 Utilitaire.writeToFile(StrategieHuff.decompress(array), decompressedFilePath);
                 System.out.println("duree: " + (endTime - startTime) + "ms");
-            }*/ else {
-                System.out.println("Erreur dans le choix d'algorithme de compression, vérifiez l'orthographe.");
-            }
-        } else {
-            System.out.println("Erreur dans le choix de compression ou de decompression");
+            */} else {
+                    System.out.println("Erreur dans le choix d'algorithme de compression, vérifiez l'orthographe.");
+                }
+        } catch (Exception e){
+            e.printStackTrace();
         }
+
     }
 
     public static String convertTxtToString(String filePath) {
@@ -87,7 +81,8 @@ public class Utilitaire {
         List<String> stringList = new ArrayList<String>(Arrays.asList(data.split(",")));
         List<Integer> intList = new ArrayList<>();
         for (String string : stringList){
-            intList.add(Integer.valueOf(string.replace(" ","").replace("\n","")));
+            string = string.replace(" ","").replace("\n","");
+            intList.add(Integer.valueOf(string));
         }
         return intList;
     }

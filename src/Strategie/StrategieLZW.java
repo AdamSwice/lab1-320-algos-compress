@@ -1,64 +1,90 @@
 package Strategie;
-
-import java.io.File;
-import java.util.ArrayList;
+import java.io.*;
 import java.util.HashMap;
-import java.util.List;
 
 public class StrategieLZW {
-    public static List<Integer> compress(String data) {
-        int dictioSize = 256;
-        String tempString = "";
-        List<Integer> compressedResult = new ArrayList<Integer>();
-        HashMap<String, Integer> dictionnary = new HashMap<String, Integer>();
 
-        for (int i = 0; i < 256; i++) {
-            dictionnary.put("" + (char) i, i);
+    public static void compress(FileReader fileReader, String fileOutput) throws Exception {
+        HashMap<String, Integer> dictio = new HashMap<>();
+        int i;
+        for (i = 0; i < 256; i++){
+            char t = (char) i;
+            dictio.put(Character.toString(t), i);
         }
 
-        for (char character : data.toCharArray()) {
-            String concatenatedString = tempString + character;
-            if (dictionnary.containsKey(concatenatedString)) {
-                tempString = concatenatedString;
+        FileOutputStream outputStream = new FileOutputStream(new File(fileOutput));
+        String prefix = "";
+        int index;
+
+        long startTime = System.currentTimeMillis();
+        while ((index = fileReader.read()) != -1){
+            String tempString = prefix + (char) index;
+
+            if (dictio.containsKey(tempString)){
+                prefix = tempString;
             } else {
-                compressedResult.add(dictionnary.get(tempString));
-                dictionnary.put(concatenatedString, dictioSize++);
-                tempString = "" + character;
+                int code = dictio.get(prefix);
+                outputStream.write(code);
+                dictio.put(tempString, i);
+                i++;
+                prefix = "" + (char) index;
             }
         }
 
-        if (!"".equalsIgnoreCase(tempString)){
-            compressedResult.add(dictionnary.get(tempString));
+        if (dictio.containsKey(prefix)){
+            int code = dictio.get(prefix);
+            outputStream.write(code);
+        } else {
+            dictio.put(prefix, i);
+            int code = dictio.get(prefix);
+            outputStream.write(code);
         }
-        return compressedResult;
+        fileReader.close();
+        outputStream.flush();
+        outputStream.close();
+        long endTime = System.currentTimeMillis();
+        System.out.println("duree: " + (endTime - startTime) + "ms");
     }
 
-    public static String decompress(List<Integer> data) {
-        int dictioSize = 256;
-        String tempString = "" + (char) (int) data.remove(0);
-        StringBuffer decompressedResult = new StringBuffer(tempString);
+    public static void decompress(FileInputStream inputStream, String fileOutput) throws Exception{
+        HashMap<Integer, String> dictio = new HashMap<>();
+        int i;
 
-        HashMap<Integer, String> dictionnary = new HashMap<Integer, String>();
-
-        for (int i = 0; i < 256; i++) {
-            dictionnary.put(i, "" + (char) i);
+        for (i=0;i<256; i++){
+            char t = (char) i;
+            dictio.put(i, Character.toString(t));
         }
 
-        for (int value : data) {
-            String start = "";
-            if (dictionnary.containsKey(value)){
-                start = dictionnary.get(value);
+        String original = "";
+
+        int code = inputStream.read();
+        if (dictio.containsKey(code)){
+            original += dictio.get(code);
+        }
+        int oldValue = code;
+
+        long startTime = System.currentTimeMillis();
+        while ((code = inputStream.read()) != -1){
+            if (dictio.containsKey(code)){
+                String tempString = dictio.get(code);
+                original = original + tempString;
+                dictio.put(i, dictio.get(oldValue) + tempString.charAt(0));
+                i++;
+                oldValue = code;
+            } else {
+                String tempString = dictio.get(oldValue);
+                dictio.put(i, tempString + tempString.charAt(0));
+                i++;
+                original = original + tempString + tempString.charAt(0);
             }
-            else if (value == dictioSize) {
-                start = tempString + tempString.charAt(0);
-            } //TODO: throw exception si mal compressed maybe
-
-            decompressedResult.append(start);
-
-            dictionnary.put(dictioSize++, tempString + start.charAt(0));
-
-            tempString = start;
         }
-        return decompressedResult.toString();
+        inputStream.close();
+        FileWriter fileWriter = new FileWriter(new File(fileOutput));
+        fileWriter.write(original);
+        fileWriter.flush();
+        fileWriter.close();
+        long endTime = System.currentTimeMillis();
+        System.out.println("duree: " + (endTime - startTime) + "ms");
     }
+
 }

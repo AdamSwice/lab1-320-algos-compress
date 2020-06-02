@@ -1,0 +1,26 @@
+Un PC sous Windows 95, 98, Me, 2000 ou XP, Word 2000, WordPro version 98, WordPerfect 8 ou des versions plus récentes.
+
+Accessible à tous, même à ceux qui ne connaissent pas les logiciels utilisés.
+
+20 minutes
+
+Vous devez imprimer un document sur un format de papier inhabituel et vous vous demandez combien de pages sortiront. Déroulez Fichier/Mise en page/Format du papier. Dans Format du papier, optez pour Taille personnalisée. Saisissez la hauteur et la largeur de la page, validez par [ok], puis tapez sur les touches + pour afficher la fin du document. Le nombre de pages est affiché en bas à gauche.
+
+Ne vous servez pas du mode Document maître, confus et peu pratique.
+
+Avec Word 2000 ou XP
+Affectez des styles à vos titres
+
+Pour faciliter la gestion de votre document, il est préférable d'affecter des styles aux titres de vos parties. Donnez le style Titre1 aux titres de chapitres, Titre2 à ceux des sous-chapitres et ainsi de suite. Pour modifier le style d'une ligne, sélectionnez-la, déroulez la liste de styles (celle où vous voyez afficher le mot ' Normal ') et choisissez-en un.
+
+Naviguez facilement dans le texte
+
+Les trois boutons placés en bas à droite de votre écran permettent une navigation facile dans le document. Le rond vous permet de choisir le mode de navigation (par page, section, annotation...) et les deux autres en forme de double-flèche, placés de part et d'autre, servent à la navigation proprement dite. Ainsi, cliquez par exemple sur le bouton rond, puis sur celui situé en bas à droite (Parcourir par tableau). Dès que vous aurez effectué cette opération, vous pourrez vous déplacer de tableau en tableau, en cliquant sur les deux éléments placés de part et d'autre du bouton rond.
+
+Utilisez aussi l'Explorateur de documents
+
+Déroulez le menu Affichage/Explorateur de document. Word ouvre une fenêtre à gauche de l'écran et y affiche les titres et sous-titres de vos chapitres. Si vous cliquez sur l'un d'eux dans l'Explorateur de document, ce titre, et le texte correspondant, sont immédiatement affichés dans la fenêtre de droite.
+
+Pliez et dépliez le document à votre guise
+
+Vous voulez saisir ou modifier du texte dans un paragraphe sans perdre de vue la structure du document entier ? Passez en mode Plan (menu Affichage/Plan). La barre d'outils correspondante apparaît. Si vous cliquez sur [1], seuls les titres dotés du style ' Titre1 ' seront affichés. Pour afficher également les titres de niveau 2, cliquez sur [2] et ainsi de suite. Les boutons [+] et [-] affichés à gauche de chaque titre vous permettent d'en développer le contenu ou de les réduire individuellement, de la même façon que vous ouvrez ou fermez des dossiers avec lExplorateur de Windows.
