@@ -63,7 +63,7 @@ public class StrategieLZW {
     public static void decompress(BitInputStream inputStream, String fileOutput) throws Exception{
         HashMap<Integer, String> dictio = new HashMap<>();
         int i;
-
+        String negativeBitChecker="";
         for (i=0;i<256; i++){
             char t = (char) i;
             dictio.put(i, Character.toString(t));
@@ -71,14 +71,15 @@ public class StrategieLZW {
 
         String original = "";
 
-        int code = inputStream.readBit();
+        int code = Integer.parseInt(readBit(inputStream),2);
         if (dictio.containsKey(code)){
             original += dictio.get(code);
         }
         int oldValue = code;
 
         long startTime = System.currentTimeMillis();
-        while ((code = inputStream.readBit()) != -1){
+        while (!(negativeBitChecker = readBit(inputStream)).contains("-1")){
+            code = Integer.parseInt(negativeBitChecker,2);
             if (dictio.containsKey(code)){
                 String tempString = dictio.get(code);
                 original = original + tempString;
@@ -115,6 +116,7 @@ public class StrategieLZW {
                 bitString += "0";
             }
         }
+        bitString += "";
         for (char ch : bitString.toCharArray()) {
             writer.writeBit(Integer.parseInt(""+ch));
         }
@@ -130,11 +132,13 @@ public class StrategieLZW {
         }
     }
 
-    private static void readBit(int code, BitInputStream inputStream) {
-        String binaryCodeString;
+    private static String readBit(BitInputStream inputStream) {
+        String binaryCodeString = "";
         while (binaryCodeString.length() < 9) {
-            
+            binaryCodeString +=  Integer.toString(inputStream.readBit());
         }
+        binaryCodeString += "";
+        return new StringBuilder(binaryCodeString).reverse().toString();
     }
 
 }
