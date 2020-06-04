@@ -15,8 +15,8 @@ public class main {
         
         String choixAlgo = "lzw";
         String choixCompress = "d";
-        String fileIn = "C:/Users/Swicy/Desktop/lab1-320-algos-compress/src/testc.txt";
-        String fileOut = "C:/Users/Swicy/Desktop/lab1-320-algos-compress/src/testd.txt";
+        String fileIn = "C:/Users/Swicy/Desktop/lab1-320-algos-compress/src/test2c.txt";
+        String fileOut = "C:/Users/Swicy/Desktop/lab1-320-algos-compress/src/test2d.txt";
         Utilitaire.validator(choixAlgo, choixCompress, fileIn, fileOut);
     }
 }

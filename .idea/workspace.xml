@@ -10,20 +10,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="52b29df3-de38-49c6-ab21-d63dc2faee33" name="Default Changelist" comment="Huff finalized compression needs some work">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/META-INF/lab1-320-algos-compress.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/META-INF/lab1-320-algos-compress.kotlin_module" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/Strategie/StrategieHuff.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/Strategie/StrategieHuff.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/Bit/BitOutputStream.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/Bit/BitOutputStream.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/Strategie/StrategieLZW.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/Strategie/StrategieLZW.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/Strategie/StrategieOPT.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/Strategie/StrategieOPT.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/Utilitaire.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/Utilitaire.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/compressedlzw.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/compressedlzw.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/decompressedlzw.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/decompressedlzw.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Strategie/StrategieHuff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Strategie/StrategieHuff.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utilitaire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utilitaire.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/compressedlzw.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/compressedlzw.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/testc.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/testc.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/testd.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/testd.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Chapitre1 (1).pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Chapitre1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Red-Smoke-Transparent-Images-PNG.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Strategie/StrategieLZW.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Strategie/StrategieLZW.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/testc.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/testc.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/testd.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/testd.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/world.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/worldc.txt" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,43 +41,21 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="76" lean-forward="true" selection-start-line="17" selection-start-column="76" selection-end-line="17" selection-end-column="81" />
+            <state relative-caret-position="306">
+              <caret line="18" column="83" selection-start-line="18" selection-start-column="83" selection-end-line="18" selection-end-column="83" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/testd.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="8" lean-forward="true" selection-start-column="8" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/testc.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-column="10" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/src/biblec.txt">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Utilitaire.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
+            <state relative-caret-position="17">
               <caret line="21" selection-start-line="21" selection-end-line="21" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -86,10 +65,28 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test2d.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Bit/BitInputStream.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="103">
+              <caret line="36" selection-start-line="36" selection-end-line="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Strategie/StrategieLZW.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="117" column="9" lean-forward="true" selection-start-line="117" selection-start-column="9" selection-end-line="117" selection-end-column="9" />
+            <state relative-caret-position="426">
+              <caret line="139" selection-start-line="139" selection-end-line="139" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -98,37 +95,37 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Red-Smoke-Transparent-Images-PNG.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Bit/BitInputStream.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="42" selection-start-line="13" selection-start-column="41" selection-end-line="13" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/loremipsum.txt">
+        <entry file="file://$PROJECT_DIR$/src/test2c.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="114" selection-start-column="114" selection-end-column="114" />
+              <caret column="1" lean-forward="true" selection-start-column="1" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Bit/BitOutputStream.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="33" column="20" lean-forward="true" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
-              <folding>
-                <element signature="e#1772#1773#0" expanded="true" />
-                <element signature="e#1795#1796#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="578">
+              <caret line="34" selection-start-line="34" selection-end-line="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test2.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_251/src.zip!/java/lang/Integer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="9282">
+              <caret line="579" column="48" selection-start-line="579" selection-start-column="48" selection-end-line="579" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -168,11 +165,12 @@
         <option value="$PROJECT_DIR$/src/compressedexemple.txt" />
         <option value="$PROJECT_DIR$/src/exemple.txt" />
         <option value="$PROJECT_DIR$/src/Utilitaire.java" />
-        <option value="$PROJECT_DIR$/src/Bit/BitOutputStream.java" />
         <option value="$PROJECT_DIR$/src/Bit/BitInputStream.java" />
-        <option value="$PROJECT_DIR$/src/Strategie/StrategieLZW.java" />
-        <option value="$PROJECT_DIR$/src/main.java" />
         <option value="$PROJECT_DIR$/src/test.txt" />
+        <option value="$PROJECT_DIR$/src/Bit/BitOutputStream.java" />
+        <option value="$PROJECT_DIR$/src/test2c.txt" />
+        <option value="$PROJECT_DIR$/src/main.java" />
+        <option value="$PROJECT_DIR$/src/Strategie/StrategieLZW.java" />
       </list>
     </option>
   </component>
@@ -189,7 +187,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -236,6 +233,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="ProjectViewState">
@@ -250,6 +248,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -290,11 +289,16 @@
       <workItem from="1591058760356" duration="87000" />
       <workItem from="1591060189147" duration="5256000" />
       <workItem from="1591106842664" duration="23130000" />
+      <workItem from="1591135161970" duration="1648000" />
+      <workItem from="1591155206388" duration="5487000" />
+      <workItem from="1591214038629" duration="8073000" />
+      <workItem from="1591223830834" duration="2144000" />
+      <workItem from="1591228267121" duration="635000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58839000" />
+    <option name="totallyTimeSpent" value="76826000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -307,9 +311,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14232409" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49621785" visible="true" weight="0.15031983" />
+      <window_info id="Structure" order="1" sideWeight="0.50378215" side_tool="true" weight="0.15031983" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
@@ -318,7 +323,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.22777778" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.26555556" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.26555556" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -482,27 +487,45 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Strategie/StrategieLZW.java</url>
-          <line>71</line>
+          <line>74</line>
           <properties />
-          <option name="timeStamp" value="95" />
+          <option name="timeStamp" value="113" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Strategie/StrategieLZW.java</url>
           <line>139</line>
           <properties />
-          <option name="timeStamp" value="104" />
+          <option name="timeStamp" value="132" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Strategie/StrategieLZW.java</url>
-          <line>89</line>
+          <line>119</line>
           <properties />
-          <option name="timeStamp" value="106" />
+          <option name="timeStamp" value="136" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Strategie/StrategieLZW.java</url>
-          <line>98</line>
+          <line>43</line>
           <properties />
-          <option name="timeStamp" value="107" />
+          <option name="timeStamp" value="138" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Bit/BitOutputStream.java</url>
+          <line>30</line>
+          <properties />
+          <option name="timeStamp" value="139" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Strategie/StrategieLZW.java</url>
+          <line>117</line>
+          <properties />
+          <option name="timeStamp" value="140" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Strategie/StrategieLZW.java</url>
+          <line>18</line>
+          <properties />
+          <option name="timeStamp" value="141" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -513,10 +536,23 @@
         <watch expression="root.left.left.right.left.right" language="JAVA" />
         <watch expression="inputStream" language="JAVA" />
         <watch expression="dictio;" language="JAVA" />
+        <watch expression="String test = Integer.toString(inputStream.readBit());" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
+    <expressions id="evaluateCodeFragment">
+      <expression>
+        <expression-string>test += Integer.toString(inputStream.readBit());</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>String test = Integer.toString(inputStream.readBit());</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+    </expressions>
     <expressions id="watch">
       <expression>
         <expression-string>dictio;</expression-string>
@@ -526,17 +562,32 @@
     </expressions>
     <expressions id="evaluateExpression">
       <expression>
-        <expression-string>dictio.get(256)</expression-string>
+        <expression-string>fileReader.read()</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>binaryCodeString.toCharArray()</expression-string>
+        <expression-string>inputStream1.read()</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>bitString.toCharArray()</expression-string>
+        <expression-string>outputStream</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>outputStream.digits</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>digits</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>inputStream.readBit()</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -546,27 +597,12 @@
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>bitString</expression-string>
+        <expression-string>fileOutput</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>inputStream</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>inputStream.nextByte();</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>1000000000</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>binaryCodeString +=  Integer.toString(inputStream.readBit())</expression-string>
+        <expression-string>bit</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -579,13 +615,6 @@
     <entry file="file://$PROJECT_DIR$/src/loremipsumv2.txt" />
     <entry file="file://$PROJECT_DIR$/src/compressedtest.txt" />
     <entry file="file://$PROJECT_DIR$/src/decompressedtest.txt" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_251/src.zip!/java/lang/NumberFormatException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="517">
-          <caret line="64" column="15" selection-start-line="64" selection-start-column="15" selection-end-line="64" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/decompressedexemple2.txt" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_251/src.zip!/java/lang/String.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -614,29 +643,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/decompressedexemple.txt" />
     <entry file="file://$PROJECT_DIR$/src/b.txt" />
-    <entry file="file://$PROJECT_DIR$/src/loremipsumdecompressed.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="11" selection-start-column="11" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/loremipsumcompressed.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="1278712" selection-start-line="5" selection-start-column="419" selection-end-line="5" selection-end-column="1278712" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/loremipsumdecompressed.txt" />
+    <entry file="file://$PROJECT_DIR$/src/loremipsumcompressed.txt" />
     <entry file="file://$PROJECT_DIR$/src/exemple2.txt">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_251/src.zip!/java/lang/Integer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="743" column="50" selection-start-line="743" selection-start-column="50" selection-end-line="743" selection-end-column="50" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/exemple.txt">
       <provider selected="true" editor-type-id="text-editor">
@@ -655,50 +665,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/loremipsumc.txt">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/src/loremipsumc.txt" />
+    <entry file="file://$PROJECT_DIR$/src/Red-Smoke-Transparent-Images-PNG.png">
+      <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/loremipsum.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="114" selection-start-column="114" selection-end-column="114" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Utilitaire.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Red-Smoke-Transparent-Images-PNG.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Strategie/StrategieLZW.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="117" column="9" lean-forward="true" selection-start-line="117" selection-start-column="9" selection-end-line="117" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="76" lean-forward="true" selection-start-line="17" selection-start-column="76" selection-end-line="17" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/testd.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="8" lean-forward="true" selection-start-column="8" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -709,28 +683,92 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/testc.txt">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_251/src.zip!/java/lang/NumberFormatException.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-column="8" />
+        <state relative-caret-position="629">
+          <caret line="64" column="15" selection-start-line="64" selection-start-column="15" selection-end-line="64" selection-end-column="15" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Bit/BitInputStream.java">
+    <entry file="file://$PROJECT_DIR$/src/testc.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/testd.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="42" selection-start-line="13" selection-start-column="41" selection-end-line="13" selection-end-column="42" />
+        <state>
+          <caret column="7" selection-start-column="7" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_251/src.zip!/java/lang/Integer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9282">
+          <caret line="579" column="48" selection-start-line="579" selection-start-column="48" selection-end-line="579" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Utilitaire.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/biblec.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test2c.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="1" lean-forward="true" selection-start-column="1" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="83" selection-start-line="18" selection-start-column="83" selection-end-line="18" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test2d.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test2.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Bit/BitOutputStream.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="33" column="20" lean-forward="true" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
+        <state relative-caret-position="578">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Strategie/StrategieLZW.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="426">
+          <caret line="139" selection-start-line="139" selection-end-line="139" />
           <folding>
-            <element signature="e#1772#1773#0" expanded="true" />
-            <element signature="e#1795#1796#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Bit/BitInputStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="103">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
         </state>
       </provider>
     </entry>

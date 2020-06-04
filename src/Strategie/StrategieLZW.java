@@ -17,19 +17,19 @@ public class StrategieLZW {
         }
 
         BitOutputStream outputStream =  new BitOutputStream(fileOutput);
-        //FileOutputStream outputStream = new FileOutputStream(new File(fileOutput));
+//        FileOutputStream outputStream = new FileOutputStream(new File(fileOutput));
         String prefix = "";
         int index;
-
         long startTime = System.currentTimeMillis();
+
         while ((index = fileReader.read()) != -1){
             String tempString = prefix + (char) index;
             if (dictio.containsKey(tempString)){
                 prefix = tempString;
             } else {
                 int code = dictio.get(prefix);
-                String binaryCode = Integer.toBinaryString(code);
-                binaryCode = new StringBuilder(binaryCode).reverse().toString();
+                String binaryCode = String.format("%9s", Integer.toBinaryString(code)).replaceAll(" ","0");
+//                String binaryCode = Integer.toBinaryString(code);
                 bitWriter(outputStream, binaryCode);
                 if (dictio.size() == 511){
                     initializeDictio(dictio, i);
@@ -43,18 +43,18 @@ public class StrategieLZW {
 
         if (dictio.containsKey(prefix)){
             int code = dictio.get(prefix);
-            String binaryCode = Integer.toBinaryString(code);
-            binaryCode = new StringBuilder(binaryCode).reverse().toString();
+            String binaryCode = String.format("%9s", Integer.toBinaryString(code)).replaceAll(" ","0");
+//            String binaryCode = Integer.toBinaryString(code);
             bitWriter(outputStream, binaryCode);
         } else {
             dictio.put(prefix, i);
             int code = dictio.get(prefix);
             String binaryCode = Integer.toBinaryString(code);
-            binaryCode = new StringBuilder(binaryCode).reverse().toString();
+//            String binaryCode = String.format("%9s", Integer.toBinaryString(code)).replaceAll(" ","0");
             bitWriter(outputStream, binaryCode);
         }
         fileReader.close();
-        //outputStream.flush();
+//        outputStream.flush();
         outputStream.close();
         long endTime = System.currentTimeMillis();
         System.out.println("duree: " + (endTime - startTime) + "ms");
@@ -70,7 +70,8 @@ public class StrategieLZW {
         }
 
         String original = "";
-
+//        FileInputStream inputStream1 = new FileInputStream(fileOutput);
+//        FileReader fileReader = new FileReader(fileOutput);
         int code = Integer.parseInt(readBit(inputStream),2);
         if (dictio.containsKey(code)){
             original += dictio.get(code);
@@ -78,7 +79,7 @@ public class StrategieLZW {
         int oldValue = code;
 
         long startTime = System.currentTimeMillis();
-        while (!(negativeBitChecker = readBit(inputStream)).contains("-1")){
+        while (!(negativeBitChecker = readBit(inputStream)).contains("-1") && !negativeBitChecker.isEmpty()){
             code = Integer.parseInt(negativeBitChecker,2);
             if (dictio.containsKey(code)){
                 String tempString = dictio.get(code);
@@ -110,15 +111,13 @@ public class StrategieLZW {
         System.out.println("duree: " + (endTime - startTime) + "ms");
     }
 
-    private static void bitWriter(BitOutputStream writer, String bitString){
-        if (bitString.length() < 9){
-            for (int i=bitString.length();i<9;i++) {
-                bitString += "0";
-            }
-        }
+    private static void bitWriter(BitOutputStream writer, String bitString) throws Exception{
         bitString += "";
-        for (char ch : bitString.toCharArray()) {
-            writer.writeBit(Integer.parseInt(""+ch));
+        char[] chars = bitString.toCharArray();
+        int bit;
+        for (int i = 0, n = chars.length; i < n; i++) {
+            bit = Integer.parseInt(chars[i]+"");
+            writer.writeBit(bit);
         }
     }
 
@@ -134,11 +133,12 @@ public class StrategieLZW {
 
     private static String readBit(BitInputStream inputStream) {
         String binaryCodeString = "";
-        while (binaryCodeString.length() < 9) {
-            binaryCodeString +=  Integer.toString(inputStream.readBit());
+        int bit;
+        while (binaryCodeString.length() < 9 && (bit = inputStream.readBit() )!= -1) {
+            binaryCodeString +=  Integer.toString(bit);
         }
         binaryCodeString += "";
-        return new StringBuilder(binaryCodeString).reverse().toString();
+        return new StringBuilder(binaryCodeString).toString();
     }
 
 }
