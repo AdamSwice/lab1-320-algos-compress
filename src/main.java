@@ -1,3 +1,6 @@
+import Bit.BitInputStream;
+import Bit.BitOutputStream;
+
 /**
  * Classe main
  * Demande au user quel algo il veut utiliser, génère l'objet qui à l'algo d'implementé, puis éxecute l'algorithme.
@@ -15,8 +18,9 @@ public class main {
         
         String choixAlgo = "lzw";
         String choixCompress = "d";
-        String fileIn = "C:/Users/Swicy/Desktop/lab1-320-algos-compress/src/test2c.txt";
-        String fileOut = "C:/Users/Swicy/Desktop/lab1-320-algos-compress/src/test2d.txt";
+        String fileIn = "C:/Users/Swicy/Desktop/lab1-320-algos-compress/src/biblec.txt";
+        String fileOut = "C:/Users/Swicy/Desktop/lab1-320-algos-compress/src/bibled.txt";
         Utilitaire.validator(choixAlgo, choixCompress, fileIn, fileOut);
+
     }
 }

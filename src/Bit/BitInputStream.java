@@ -8,10 +8,10 @@ import java.io.*;
 
 public class BitInputStream {
     private FileInputStream input;
-    private int digits;     // next set of digits (buffer)
+    public int digits;     // next set of digits (buffer)
     private int numDigits;  // how many digits from buffer have been used
 
-    private static final int BYTE_SIZE = 9;  // digits per byte
+    private static final int BYTE_SIZE = 8;  // digits per byte
 
     // pre : given file name is legal
     // post: creates a BitInputStream reading input from the file
@@ -59,5 +59,9 @@ public class BitInputStream {
     // included to ensure that the stream is closed
     protected void finalize() {
         close();
+    }
+
+    public int getDigits() {
+        return digits;
     }
 }

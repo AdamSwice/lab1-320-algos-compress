@@ -8,10 +8,10 @@ import java.io.*;
 
 public class BitOutputStream {
     private FileOutputStream output;
-    private int digits;     // a buffer used to build up next set of digits
+    public int digits;     // a buffer used to build up next set of digits
     private int numDigits;  // how many digits are currently in the buffer
 
-    private static final int BYTE_SIZE = 9;  // digits per byte
+    private static final int BYTE_SIZE = 8;  // digits per byte
 
     // pre : given file name is legal
     // post: creates a BitOutputStream sending output to the file
@@ -57,6 +57,9 @@ public class BitOutputStream {
         } catch (IOException e) {
             throw new RuntimeException(e.toString());
         }
+    }
+    public int getDigits(){
+        return digits;
     }
 
     // included to ensure that the stream is closed
