@@ -16,7 +16,7 @@ public class StrategieLZW {
             dictio.put(Character.toString(t), i);
         }
 
-        BitOutputStream outputStream =  new BitOutputStream(fileOutput);
+        BitOutputStream outputStream =  new BitOutputStream(fileOutput,false);
 //        FileOutputStream outputStream = new FileOutputStream(new File(fileOutput));
         String prefix = "";
         int index;

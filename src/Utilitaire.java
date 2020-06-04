@@ -1,4 +1,5 @@
 import Bit.BitInputStream;
+import Strategie.StrategieHuff;
 import Strategie.StrategieLZW;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -20,12 +21,12 @@ public class Utilitaire {
                     FileReader fileReader = new FileReader(toCompress);
                     StrategieLZW.compress(fileReader, fileOut);
                 }
-/*            else if ("huff".equalsIgnoreCase(choixAlgo)) {
-                long startTime = System.currentTimeMillis();
-                Utilitaire.write(StrategieHuff.compress(data));
-                long endTime = System.currentTimeMillis();
-                System.out.println("duree: " + (endTime - startTime) + "ms");
-            }*/ else {
+                else if ("huff".equalsIgnoreCase(choixAlgo)) {
+                    long startTime = System.currentTimeMillis();
+                    StrategieHuff.compress(convertTxtToString(fileIn),fileOut);
+                    long endTime = System.currentTimeMillis();
+                    System.out.println("duree: " + (endTime - startTime) + "ms");
+                } else {
                     System.out.println("Erreur dans le choix d'algorithme de compression, vérifiez l'orthographe.");
                 }
             } else if ("d".equalsIgnoreCase(choixCompress)) {
@@ -33,16 +34,17 @@ public class Utilitaire {
                     //FileInputStream inputStream = new FileInputStream(fileIn);
                     BitInputStream inputStream = new BitInputStream(fileIn);
                     StrategieLZW.decompress(inputStream, fileOut);
+                } else if ("huff".equalsIgnoreCase(choixAlgo)) {
+                    long startTime = System.currentTimeMillis();
+                    BitInputStream inputStream = new BitInputStream(fileIn);
+                    StrategieHuff.decompress(inputStream, fileIn, fileOut);
+                    long endTime = System.currentTimeMillis();
+                    System.out.println("duree: " + (endTime - startTime) + "ms");
                 }
-            /*else if ("huff".equalsIgnoreCase(choixAlgo)) {
-                long startTime = System.currentTimeMillis();
-                ArrayList<Object> array = read();
-                long endTime = System.currentTimeMillis();
-                Utilitaire.writeToFile(StrategieHuff.decompress(array), decompressedFilePath);
-                System.out.println("duree: " + (endTime - startTime) + "ms");
-            */} else {
-                    System.out.println("Erreur dans le choix d'algorithme de compression, vérifiez l'orthographe.");
-                }
+            }
+            else {
+                System.out.println("Erreur dans le choix d'algorithme de compression, vérifiez l'orthographe.");
+            }
         } catch (Exception e){
             e.printStackTrace();
         }
@@ -59,70 +61,70 @@ public class Utilitaire {
         return stringBuilder.toString();
     }
 
-    private static void writeToFile(String data, String path) {
-        data = data.replace("[", "");
-        data = data.replace("]", "");
-
-        try {
-            File compressedFile = new File(path);
-            if (!compressedFile.exists()){
-                compressedFile.createNewFile();
-            }
-
-            FileWriter fileWriter = new FileWriter(compressedFile.getAbsoluteFile());
-            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-            bufferedWriter.write(data);
-            bufferedWriter.close();
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-    private static List<Integer> convertStringToList(String data) {
-        List<String> stringList = new ArrayList<String>(Arrays.asList(data.split(",")));
-        List<Integer> intList = new ArrayList<>();
-        for (String string : stringList){
-            string = string.replace(" ","").replace("\n","");
-            intList.add(Integer.valueOf(string));
-        }
-        return intList;
-    }
-    public static ArrayList<Object> read(){
-        ArrayList<Object> woi;
-        try
-        {
-            FileInputStream fis = new FileInputStream("hashmap.txt");
-            ObjectInputStream ois = new ObjectInputStream(fis);
-            woi = (ArrayList<Object>) ois.readObject();
-            ois.close();
-            fis.close();
-            return woi;
-        }catch(IOException ioe)
-        {
-            ioe.printStackTrace();
-            return null;
-        }catch(ClassNotFoundException c)
-        {
-            System.out.println("Class not found");
-            c.printStackTrace();
-            return null;
-        }
-    }
-
-    public static void write(ArrayList<Object> woi){
-        try
-        {
-            FileOutputStream fos =
-                    new FileOutputStream("hashmap.txt");
-
-            ObjectOutputStream oos = new ObjectOutputStream(new BufferedOutputStream(fos));
-            oos.writeObject(woi);
-            oos.close();
-            fos.close();
-
-        }catch(IOException ioe)
-        {
-            ioe.printStackTrace();
-        }
-    }
+//    private static void writeToFile(String data, String path) {
+//        data = data.replace("[", "");
+//        data = data.replace("]", "");
+//
+//        try {
+//            File compressedFile = new File(path);
+//            if (!compressedFile.exists()){
+//                compressedFile.createNewFile();
+//            }
+//
+//            FileWriter fileWriter = new FileWriter(compressedFile.getAbsoluteFile());
+//            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+//            bufferedWriter.write(data);
+//            bufferedWriter.close();
+//
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//    }
+//    private static List<Integer> convertStringToList(String data) {
+//        List<String> stringList = new ArrayList<String>(Arrays.asList(data.split(",")));
+//        List<Integer> intList = new ArrayList<>();
+//        for (String string : stringList){
+//            string = string.replace(" ","").replace("\n","");
+//            intList.add(Integer.valueOf(string));
+//        }
+//        return intList;
+//    }
+//    public static ArrayList<Object> read(){
+//        ArrayList<Object> woi;
+//        try
+//        {
+//            FileInputStream fis = new FileInputStream("hashmap.txt");
+//            ObjectInputStream ois = new ObjectInputStream(fis);
+//            woi = (ArrayList<Object>) ois.readObject();
+//            ois.close();
+//            fis.close();
+//            return woi;
+//        }catch(IOException ioe)
+//        {
+//            ioe.printStackTrace();
+//            return null;
+//        }catch(ClassNotFoundException c)
+//        {
+//            System.out.println("Class not found");
+//            c.printStackTrace();
+//            return null;
+//        }
+//    }
+//
+//    public static void write(ArrayList<Object> woi){
+//        try
+//        {
+//            FileOutputStream fos =
+//                    new FileOutputStream("hashmap.txt");
+//
+//            ObjectOutputStream oos = new ObjectOutputStream(new BufferedOutputStream(fos));
+//            oos.writeObject(woi);
+//            oos.close();
+//            fos.close();
+//
+//        }catch(IOException ioe)
+//        {
+//            ioe.printStackTrace();
+//        }
+//    }
 }
