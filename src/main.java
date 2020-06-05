@@ -30,8 +30,8 @@ public class main {
 
 //        String choixAlgo = "huff";
 //        String choixCompress = "d";
-//        String fileIn = "D:/lab1-320-algos-compress/src/Test/Huff/compressed_loremipsum.txt";
-//        String fileOut = "D:/lab1-320-algos-compress/src/Test/Huff/uncompressed_loremipsum.txt";
+//        String fileIn = "D:/lab1-320-algos-compress/src/Test/Huff/compressed_exemple.txt";
+//        String fileOut = "D:/lab1-320-algos-compress/src/Test/Huff/uncompressed_exemple.txt";
 //        Utilitaire.validator(choixAlgo, choixCompress, fileIn, fileOut);
 
     }

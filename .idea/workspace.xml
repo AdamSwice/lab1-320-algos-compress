@@ -7,16 +7,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="52b29df3-de38-49c6-ab21-d63dc2faee33" name="Default Changelist" comment="Compression fixed">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/Bit/BitInputStream.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/Bit/BitInputStream.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/Bit/BitOutputStream.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/Bit/BitOutputStream.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/Strategie/StrategieLZW.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/Strategie/StrategieLZW.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/META-INF/lab1-320-algos-compress.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/Strategie/StrategieHuff$HuffmanNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/Strategie/StrategieHuff$HuffmanNode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/Strategie/StrategieHuff.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/Strategie/StrategieHuff.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/Strategie/StrategieOPT.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/Strategie/StrategieOPT.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/Utilitaire.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/Utilitaire.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Bit/BitOutputStream.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Bit/BitOutputStream.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Strategie/StrategieHuff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Strategie/StrategieHuff.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Strategie/StrategieLZW.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Strategie/StrategieLZW.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utilitaire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utilitaire.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -33,24 +31,6 @@
         <option value="Class" />
       </list>
     </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>“</find>
-      <find>’</find>
-      <find>”</find>
-      <find>\\</find>
-      <find>idx</find>
-      <find>BYTE_SIZE</find>
-      <find>digits</find>
-      <find>null</find>
-    </findStrings>
-    <replaceStrings>
-      <replace />
-      <replace>'</replace>
-      <replace>&quot;</replace>
-      <replace>/</replace>
-    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -155,26 +135,26 @@
       <screen x="0" y="0" width="2560" height="1409" />
     </state>
     <state x="1061" y="431" key="FileChooserDialogImpl/0.0.2560.1409/-1920.0.1920.1050@0.0.2560.1409" timestamp="1591262400178" />
-    <state width="2517" height="442" key="GridCell.Tab.0.bottom" timestamp="1591264052232">
+    <state width="2517" height="270" key="GridCell.Tab.0.bottom" timestamp="1591361810732">
       <screen x="0" y="0" width="2560" height="1409" />
     </state>
     <state width="2517" height="270" key="GridCell.Tab.0.bottom/0.0.2560.1409/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1590079581106" />
-    <state width="2517" height="442" key="GridCell.Tab.0.bottom/0.0.2560.1409/-1920.0.1920.1050@0.0.2560.1409" timestamp="1591264052232" />
-    <state width="2517" height="442" key="GridCell.Tab.0.center" timestamp="1591264052232">
+    <state width="2517" height="270" key="GridCell.Tab.0.bottom/0.0.2560.1409/-1920.0.1920.1050@0.0.2560.1409" timestamp="1591361810732" />
+    <state width="2517" height="270" key="GridCell.Tab.0.center" timestamp="1591361810732">
       <screen x="0" y="0" width="2560" height="1409" />
     </state>
     <state width="2517" height="270" key="GridCell.Tab.0.center/0.0.2560.1409/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1590079581106" />
-    <state width="2517" height="442" key="GridCell.Tab.0.center/0.0.2560.1409/-1920.0.1920.1050@0.0.2560.1409" timestamp="1591264052232" />
-    <state width="2517" height="442" key="GridCell.Tab.0.left" timestamp="1591264052232">
+    <state width="2517" height="270" key="GridCell.Tab.0.center/0.0.2560.1409/-1920.0.1920.1050@0.0.2560.1409" timestamp="1591361810732" />
+    <state width="2517" height="270" key="GridCell.Tab.0.left" timestamp="1591361810731">
       <screen x="0" y="0" width="2560" height="1409" />
     </state>
     <state width="2517" height="270" key="GridCell.Tab.0.left/0.0.2560.1409/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1590079581105" />
-    <state width="2517" height="442" key="GridCell.Tab.0.left/0.0.2560.1409/-1920.0.1920.1050@0.0.2560.1409" timestamp="1591264052232" />
-    <state width="2517" height="442" key="GridCell.Tab.0.right" timestamp="1591264052232">
+    <state width="2517" height="270" key="GridCell.Tab.0.left/0.0.2560.1409/-1920.0.1920.1050@0.0.2560.1409" timestamp="1591361810731" />
+    <state width="2517" height="270" key="GridCell.Tab.0.right" timestamp="1591361810732">
       <screen x="0" y="0" width="2560" height="1409" />
     </state>
     <state width="2517" height="270" key="GridCell.Tab.0.right/0.0.2560.1409/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1590079581106" />
-    <state width="2517" height="442" key="GridCell.Tab.0.right/0.0.2560.1409/-1920.0.1920.1050@0.0.2560.1409" timestamp="1591264052232" />
+    <state width="2517" height="270" key="GridCell.Tab.0.right/0.0.2560.1409/-1920.0.1920.1050@0.0.2560.1409" timestamp="1591361810732" />
     <state width="2517" height="442" key="GridCell.Tab.1.bottom" timestamp="1591264053232">
       <screen x="0" y="0" width="2560" height="1409" />
     </state>
@@ -207,11 +187,11 @@
       <screen x="0" y="0" width="2560" height="1409" />
     </state>
     <state width="1287" height="712" key="XDebugger.FullValuePopup/0.0.2560.1409/-1920.0.1920.1050@0.0.2560.1409" timestamp="1591264462740" />
-    <state x="977" y="529" key="com.intellij.ide.util.TipDialog" timestamp="1591009120212">
+    <state x="977" y="529" key="com.intellij.ide.util.TipDialog" timestamp="1591359160036">
       <screen x="0" y="0" width="2560" height="1409" />
     </state>
     <state x="-1187" y="394" key="com.intellij.ide.util.TipDialog/0.0.2560.1409/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1590515260382" />
-    <state x="977" y="529" key="com.intellij.ide.util.TipDialog/0.0.2560.1409/-1920.0.1920.1050@0.0.2560.1409" timestamp="1591009120212" />
+    <state x="977" y="529" key="com.intellij.ide.util.TipDialog/0.0.2560.1409/-1920.0.1920.1050@0.0.2560.1409" timestamp="1591359160036" />
     <state x="1090" y="622" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591033918544">
       <screen x="0" y="0" width="2560" height="1409" />
     </state>
@@ -280,7 +260,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Strategie/StrategieHuff.java</url>
-          <line>52</line>
+          <line>58</line>
           <option name="timeStamp" value="170" />
         </line-breakpoint>
       </breakpoints>
