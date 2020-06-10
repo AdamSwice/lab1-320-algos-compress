@@ -22,12 +22,17 @@ public class main {
 //        String fileOut = "C:/Users/Swicy/Desktop/lab1-320-algos-compress/src/bibled.txt";
 //        Utilitaire.validator(choixAlgo, choixCompress, fileIn, fileOut);
 
-        String choixAlgo = "opt";
+      /*  String choixAlgo = "lzw";
         String choixCompress = "c";
-        String fileIn = "C:/Users/Swicy/Desktop/lab1-320-algos-compress/src/bible.txt";
-        String fileOut = "C:/Users/Swicy/Desktop/lab1-320-algos-compress/src/biblec.txt";
-        Utilitaire.validator(choixAlgo, choixCompress, fileIn, fileOut);
+        String fileIn = "C:/Users/Swicy/Desktop/lab1-320-algos-compress/src/world.txt";
+        String fileOut = "C:/Users/Swicy/Desktop/lab1-320-algos-compress/src/worldc.txt";
+        Utilitaire.validator(choixAlgo, choixCompress, fileIn, fileOut);*/
 
+        String choixAlgo = "lzw";
+        String choixCompress = "c";
+        String fileIn = "C:/Users/faute/OneDrive/Documents//GitHub/lab1-320-algos-compress/src/world.txt";
+        String fileOut = "C://Users//faute/OneDrive/Documents/GitHub/lab1-320-algos-compress/src/worldlzw.txt";
+        Utilitaire.validator(choixAlgo, choixCompress, fileIn, fileOut);
 //        String choixAlgo = "huff";
 //        String choixCompress = "d";
 //        String fileIn = "D:/lab1-320-algos-compress/src/Test/Huff/compressed_exemple.txt";

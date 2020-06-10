@@ -26,7 +26,7 @@ public class StrategieLZW {
                 prefix = tempString;
             } else {
                 int code = dictio.get(prefix);
-                String binaryCode = String.format("%16s", Integer.toBinaryString(code)).replaceAll(" ","0");
+                String binaryCode = String.format("%10s", Integer.toBinaryString(code)).replaceAll(" ","0");
 //                String binaryCode = Integer.toBinaryString(code);
                 bitWriter(outputStream, binaryCode);
                 if (dictio.size() == 65535){
@@ -41,14 +41,14 @@ public class StrategieLZW {
 
         if (dictio.containsKey(prefix)){
             int code = dictio.get(prefix);
-            String binaryCode = String.format("%16s", Integer.toBinaryString(code)).replaceAll(" ","0");
+            String binaryCode = String.format("%10s", Integer.toBinaryString(code)).replaceAll(" ","0");
 //            String binaryCode = Integer.toBinaryString(code);
             bitWriter(outputStream, binaryCode);
         } else {
             dictio.put(prefix, i);
             int code = dictio.get(prefix);
 //            String binaryCode = Integer.toBinaryString(code);
-            String binaryCode = String.format("%16s", Integer.toBinaryString(code)).replaceAll(" ","0");
+            String binaryCode = String.format("%10s", Integer.toBinaryString(code)).replaceAll(" ","0");
             bitWriter(outputStream, binaryCode);
         }
         fileReader.close();
@@ -80,7 +80,7 @@ public class StrategieLZW {
                 String tempString = dictio.get(code);
                 original.append(tempString);
                 String nullChecker = dictio.get(oldValue) == null? "" : dictio.get(oldValue);
-                if (dictio.size() == 65535){
+                if (dictio.size() == 1023){
                     initializeDictioDecompress(dictio, i);
                     i=256;
                 }
@@ -89,7 +89,7 @@ public class StrategieLZW {
                 oldValue = code;
             } else {
                 String tempString = dictio.get(oldValue);
-                if (i == 65535){
+                if (i == 1023){
                     initializeDictioDecompress(dictio, i);
                     i=256;
                 }
@@ -142,7 +142,7 @@ public class StrategieLZW {
     private static String readBit(BitInputStream inputStream) {
         String binaryCodeString = "";
         int bit;
-        while (binaryCodeString.length() < 16 && (bit = inputStream.readBit() )!= -1) {
+        while (binaryCodeString.length() < 10 && (bit = inputStream.readBit() )!= -1) {
             binaryCodeString +=  Integer.toString(bit);
         }
         binaryCodeString += "";

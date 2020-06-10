@@ -7,19 +7,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="52b29df3-de38-49c6-ab21-d63dc2faee33" name="Default Changelist" comment="Compression fixed">
-      <change beforePath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/Strategie/StrategieOPT.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/Strategie/StrategieOPT.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/Utilitaire.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/Utilitaire.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/loremipsumd.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/loremipsumd.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/Strategie/StrategieLZW.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/Strategie/StrategieLZW.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/biblec.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/biblec.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/world.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Strategie/StrategieLZW.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Strategie/StrategieLZW.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Strategie/StrategieOPT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Strategie/StrategieOPT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utilitaire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utilitaire.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/biblec.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/biblec.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bibled.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/bibled.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/loremipsumc.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/loremipsumc.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/worldc.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/worldc.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/worldd.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/worldd.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/world.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,106 +23,6 @@
   </component>
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="341">
-              <caret line="26" column="54" selection-start-line="26" selection-start-column="54" selection-end-line="26" selection-end-column="54" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/world.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="139" column="58" selection-start-line="139" selection-start-column="58" selection-end-line="139" selection-end-column="58" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/bibled.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="27" column="74" selection-start-line="27" selection-start-column="74" selection-end-line="27" selection-end-column="74" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/loremipsum.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="75" selection-start-line="8" selection-start-column="75" selection-end-line="8" selection-end-column="75" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/loremipsumd.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="63" selection-end-line="8" selection-end-column="505" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/loremipsumc.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="33" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Strategie/StrategieLZW.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2397">
-              <caret line="141" column="47" lean-forward="true" selection-start-line="141" selection-start-column="47" selection-end-line="141" selection-end-column="47" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Strategie/StrategieOPT.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1160">
-              <caret line="88" column="32" selection-start-line="88" selection-start-column="32" selection-end-line="88" selection-end-column="32" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Utilitaire.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="49" column="46" selection-start-line="49" selection-start-column="46" selection-end-line="49" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/worldd.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="44" column="26" selection-start-line="44" selection-start-column="26" selection-end-line="44" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -146,16 +41,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/src/Utilitaire.java" />
-        <option value="$PROJECT_DIR$/src/Strategie/StrategieOPT.java" />
-        <option value="$PROJECT_DIR$/src/main.java" />
-        <option value="$PROJECT_DIR$/src/Strategie/StrategieLZW.java" />
-      </list>
-    </option>
-  </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="277" />
     <option name="y" value="32" />
@@ -163,61 +48,6 @@
     <option name="height" value="780" />
   </component>
   <component name="ProjectId" id="1c5JNbnxKT6VSGs7tUqmlcN1gtc" />
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="lab1-320-algos-compress" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lab1-320-algos-compress" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lab1-320-algos-compress" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lab1-320-algos-compress" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lab1-320-algos-compress" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lab1-320-algos-compress" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lab1-320-algos-compress" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lab1-320-algos-compress" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
-              <item name="lab1_320_algos_compress_jar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lab1-320-algos-compress" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lab1-320-algos-compress" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lab1-320-algos-compress" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lab1-320-algos-compress" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Bit" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lab1-320-algos-compress" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lab1-320-algos-compress" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Strategie" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-    </panes>
-  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -235,18 +65,6 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.general" />
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager">
     <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
@@ -292,72 +110,6 @@
       <is-autoscroll-to-source value="true" />
     </todo-panel>
   </component>
-  <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
-    <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49621785" visible="true" weight="0.20415778" />
-      <window_info id="Structure" order="1" sideWeight="0.50378215" side_tool="true" weight="0.15031983" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.22777778" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.26555556" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="12" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Database" order="4" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Maven" order="6" />
-      <window_info anchor="right" id="Capture Analysis" order="7" />
-      <window_info anchor="right" id="Palette&#9;" order="8" />
-    </layout>
-    <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14232409" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.22777778" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.26555556" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="12" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Database" order="4" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Maven" order="6" />
-      <window_info anchor="right" id="Capture Analysis" order="7" />
-      <window_info anchor="right" id="Palette&#9;" order="8" />
-    </layout-to-restore>
-  </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
@@ -389,24 +141,28 @@
       <screen x="0" y="0" width="2560" height="1409" />
     </state>
     <state x="1061" y="431" key="FileChooserDialogImpl/0.0.2560.1409/-1920.0.1920.1050@0.0.2560.1409" timestamp="1591262400178" />
-    <state width="2517" height="270" key="GridCell.Tab.0.bottom" timestamp="1591361810732">
-      <screen x="0" y="0" width="2560" height="1409" />
+    <state width="1877" height="186" key="GridCell.Tab.0.bottom" timestamp="1591825058142">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1877" height="186" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591825058142" />
     <state width="2517" height="270" key="GridCell.Tab.0.bottom/0.0.2560.1409/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1590079581106" />
     <state width="2517" height="270" key="GridCell.Tab.0.bottom/0.0.2560.1409/-1920.0.1920.1050@0.0.2560.1409" timestamp="1591361810732" />
-    <state width="2517" height="270" key="GridCell.Tab.0.center" timestamp="1591361810732">
-      <screen x="0" y="0" width="2560" height="1409" />
+    <state width="1877" height="186" key="GridCell.Tab.0.center" timestamp="1591825058142">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1877" height="186" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591825058142" />
     <state width="2517" height="270" key="GridCell.Tab.0.center/0.0.2560.1409/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1590079581106" />
     <state width="2517" height="270" key="GridCell.Tab.0.center/0.0.2560.1409/-1920.0.1920.1050@0.0.2560.1409" timestamp="1591361810732" />
-    <state width="2517" height="270" key="GridCell.Tab.0.left" timestamp="1591361810731">
-      <screen x="0" y="0" width="2560" height="1409" />
+    <state width="1877" height="186" key="GridCell.Tab.0.left" timestamp="1591825058142">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1877" height="186" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591825058142" />
     <state width="2517" height="270" key="GridCell.Tab.0.left/0.0.2560.1409/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1590079581105" />
     <state width="2517" height="270" key="GridCell.Tab.0.left/0.0.2560.1409/-1920.0.1920.1050@0.0.2560.1409" timestamp="1591361810731" />
-    <state width="2517" height="270" key="GridCell.Tab.0.right" timestamp="1591361810732">
-      <screen x="0" y="0" width="2560" height="1409" />
+    <state width="1877" height="186" key="GridCell.Tab.0.right" timestamp="1591825058142">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1877" height="186" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591825058142" />
     <state width="2517" height="270" key="GridCell.Tab.0.right/0.0.2560.1409/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1590079581106" />
     <state width="2517" height="270" key="GridCell.Tab.0.right/0.0.2560.1409/-1920.0.1920.1050@0.0.2560.1409" timestamp="1591361810732" />
     <state width="2517" height="442" key="GridCell.Tab.1.bottom" timestamp="1591264053232">
@@ -465,121 +221,25 @@
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Bit/BitOutputStream.java</url>
           <line>30</line>
-          <properties />
           <option name="timeStamp" value="139" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Bit/BitInputStream.java</url>
           <line>3</line>
-          <properties />
           <option name="timeStamp" value="152" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Bit/BitInputStream.java</url>
           <line>41</line>
-          <properties />
           <option name="timeStamp" value="156" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Strategie/StrategieHuff.java</url>
           <line>59</line>
-          <properties />
           <option name="timeStamp" value="170" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Utilitaire.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="49" column="46" selection-start-line="49" selection-start-column="46" selection-end-line="49" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/loremipsumd.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="63" selection-end-line="8" selection-end-column="505" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/loremipsum.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="75" selection-start-line="8" selection-start-column="75" selection-end-line="8" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Strategie/StrategieHuff.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="10" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bibled.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="27" column="74" selection-start-line="27" selection-start-column="74" selection-end-line="27" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Bit/BitOutputStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="49" selection-start-line="19" selection-start-column="49" selection-end-line="19" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/world.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="139" column="58" selection-start-line="139" selection-start-column="58" selection-end-line="139" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/worldd.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="44" column="26" selection-start-line="44" selection-start-column="26" selection-end-line="44" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/loremipsumc.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="33" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="26" column="54" selection-start-line="26" selection-start-column="54" selection-end-line="26" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Strategie/StrategieOPT.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1160">
-          <caret line="88" column="32" selection-start-line="88" selection-start-column="32" selection-end-line="88" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Strategie/StrategieLZW.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2397">
-          <caret line="141" column="47" lean-forward="true" selection-start-line="141" selection-start-column="47" selection-end-line="141" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
   </component>
   <component name="masterDetails">
     <states>
