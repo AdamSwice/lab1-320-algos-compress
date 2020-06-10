@@ -15,9 +15,9 @@ public class BitOutputStream {
 
     // pre : given file name is legal
     // post: creates a BitOutputStream sending output to the file
-    public BitOutputStream(String file) {
+    public BitOutputStream(String file,Boolean append) {
         try {
-            output = new FileOutputStream(file);
+            output = new FileOutputStream(file,append);
         } catch (IOException e) {
             throw new RuntimeException(e.toString());
         }
