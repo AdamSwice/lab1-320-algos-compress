@@ -1,6 +1,8 @@
 import Bit.BitInputStream;
 import Strategie.StrategieHuff;
 import Strategie.StrategieLZW;
+import Strategie.StrategieOPT;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.*;
@@ -26,8 +28,12 @@ public class Utilitaire {
                     StrategieHuff.compress(convertTxtToString(fileIn),fileOut);
                     long endTime = System.currentTimeMillis();
                     System.out.println("duree: " + (endTime - startTime) + "ms");
+                } else if ("opt".equalsIgnoreCase(choixAlgo)) {
+                    File toCompress = new File(fileIn);
+                    FileReader fileReader = new FileReader(toCompress);
+                    StrategieOPT.compress(fileReader, fileOut);
                 } else {
-                    System.out.println("Erreur dans le choix d'algorithme de compression, vérifiez l'orthographe.");
+                    System.out.print("erreur dans le choix d'algo. Choississez entre \'lzw\', \'huff\' ou \'opt\'");
                 }
             } else if ("d".equalsIgnoreCase(choixCompress)) {
                 if ("lzw".equalsIgnoreCase(choixAlgo)) {
@@ -40,10 +46,15 @@ public class Utilitaire {
                     StrategieHuff.decompress(inputStream, fileIn, fileOut);
                     long endTime = System.currentTimeMillis();
                     System.out.println("duree: " + (endTime - startTime) + "ms");
+                } else if ("opt".equalsIgnoreCase(choixAlgo)){
+                    BitInputStream inputStream = new BitInputStream(fileIn);
+                    StrategieOPT.decompress(inputStream, fileOut);
+                } else {
+                    System.out.print("erreur dans le choix d'algo. Choississez entre \'lzw\', \'huff\' ou \'opt\'");
                 }
             }
             else {
-                System.out.println("Erreur dans le choix d'algorithme de compression, vérifiez l'orthographe.");
+                System.out.println("Erreur dans le choix d'algorithme de compression, vérifiez l'orthographe (-c/-d).");
             }
         } catch (Exception e){
             e.printStackTrace();

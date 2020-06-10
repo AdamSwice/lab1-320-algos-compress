@@ -7,7 +7,6 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.HashMap;
-import java.util.List;
 
 public class StrategieOPT {
     public static void compress(FileReader fileReader, String fileOutput) throws Exception {
@@ -19,7 +18,6 @@ public class StrategieOPT {
             dictio.put(Character.toString(t), i);
         }
         BitOutputStream outputStream =  new BitOutputStream(fileOutput,false);
-//        FileOutputStream outputStream = new FileOutputStream(new File(fileOutput));
         String prefix = "";
         int index;
         long startTime = System.currentTimeMillis();
@@ -29,10 +27,9 @@ public class StrategieOPT {
                 prefix = tempString;
             } else {
                 int code = dictio.get(prefix);
-                String binaryCode = String.format("%9s", Integer.toBinaryString(code)).replaceAll(" ","0");
-//                String binaryCode = Integer.toBinaryString(code);
+                String binaryCode = String.format("%20s", Integer.toBinaryString(code)).replaceAll(" ","0");
                 bitWriter(outputStream, binaryCode);
-                if (dictio.size() == 511){
+                if (dictio.size() == 1048575){
                     initializeDictioCompress(dictio, i);
                     i=256;
                 }
@@ -44,14 +41,12 @@ public class StrategieOPT {
 
         if (dictio.containsKey(prefix)){
             int code = dictio.get(prefix);
-            String binaryCode = String.format("%9s", Integer.toBinaryString(code)).replaceAll(" ","0");
-//            String binaryCode = Integer.toBinaryString(code);
+            String binaryCode = String.format("%20s", Integer.toBinaryString(code)).replaceAll(" ","0");
             bitWriter(outputStream, binaryCode);
         } else {
             dictio.put(prefix, i);
             int code = dictio.get(prefix);
-//            String binaryCode = Integer.toBinaryString(code);
-            String binaryCode = String.format("%9s", Integer.toBinaryString(code)).replaceAll(" ","0");
+            String binaryCode = String.format("%20s", Integer.toBinaryString(code)).replaceAll(" ","0");
             bitWriter(outputStream, binaryCode);
         }
         fileReader.close();
@@ -77,13 +72,12 @@ public class StrategieOPT {
         int oldValue = code;
         long startTime = System.currentTimeMillis();
         while (!(negativeBitChecker = readBit(inputStream)).contains("-1") && !negativeBitChecker.isEmpty()){
-            System.out.println(original.length());
             code = Integer.parseInt(negativeBitChecker,2);
             if (dictio.containsKey(code)){
                 String tempString = dictio.get(code);
                 original.append(tempString);
                 String nullChecker = dictio.get(oldValue) == null? "" : dictio.get(oldValue);
-                if (dictio.size() == 511){
+                if (dictio.size() == 1048575){
                     initializeDictioDecompress(dictio, i);
                     i=256;
                 }
@@ -92,12 +86,9 @@ public class StrategieOPT {
                 oldValue = code;
             } else {
                 String tempString = dictio.get(oldValue);
-                if (i == 511){
+                if (i == 1048575){
                     initializeDictioDecompress(dictio, i);
                     i=256;
-                }
-                if ((tempString+tempString.charAt(0)).contains("null")){
-                    System.out.println(code);
                 }
                 dictio.put(i, tempString + tempString.charAt(0));
                 i++;
@@ -145,7 +136,7 @@ public class StrategieOPT {
     private static String readBit(BitInputStream inputStream) {
         String binaryCodeString = "";
         int bit;
-        while (binaryCodeString.length() < 9 && (bit = inputStream.readBit() )!= -1) {
+        while (binaryCodeString.length() < 20 && (bit = inputStream.readBit() )!= -1) {
             binaryCodeString +=  Integer.toString(bit);
         }
         binaryCodeString += "";
