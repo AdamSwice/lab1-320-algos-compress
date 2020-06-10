@@ -15,7 +15,6 @@ public class StrategieLZW {
             char t = (char) i;
             dictio.put(Character.toString(t), i);
         }
-
         BitOutputStream outputStream =  new BitOutputStream(fileOutput);
 //        FileOutputStream outputStream = new FileOutputStream(new File(fileOutput));
         String prefix = "";
@@ -67,24 +66,28 @@ public class StrategieLZW {
             char t = (char) i;
             dictio.put(i, Character.toString(t));
         }
-
-        String original = "";
+        StringBuilder original = new StringBuilder("");
         int code = Integer.parseInt(readBit(inputStream),2);
         if (dictio.containsKey(code)){
-            original += dictio.get(code);
+            original.append(dictio.get(code));
         }
         int oldValue = code;
         long startTime = System.currentTimeMillis();
         while (!(negativeBitChecker = readBit(inputStream)).contains("-1") && !negativeBitChecker.isEmpty()){
+            System.out.println(original.length());
             code = Integer.parseInt(negativeBitChecker,2);
             if (dictio.containsKey(code)){
                 String tempString = dictio.get(code);
-                original = original + tempString;
+                original.append(tempString);
                 if (dictio.size() == 511){
                     initializeDictioDecompress(dictio, i);
                     i=256;
                 }
-                dictio.put(i, dictio.get(oldValue) + tempString.charAt(0));
+                if (i == 256) {
+                    System.out.print(code);
+                }
+                String nullChecker = dictio.get(oldValue) == null? "" : dictio.get(oldValue);
+                dictio.put(i, nullChecker + tempString.charAt(0));
                 i++;
                 oldValue = code;
             } else {
@@ -93,14 +96,17 @@ public class StrategieLZW {
                     initializeDictioDecompress(dictio, i);
                     i=256;
                 }
+                if ((tempString+tempString.charAt(0)).contains("null")){
+                    System.out.println(code);
+                }
                 dictio.put(i, tempString + tempString.charAt(0));
                 i++;
-                original = original + tempString + tempString.charAt(0);
+                original.append(tempString + tempString.charAt(0));
             }
         }
         inputStream.close();
         FileWriter fileWriter = new FileWriter(new File(fileOutput));
-        fileWriter.write(original);
+        fileWriter.write(original.toString());
         fileWriter.flush();
         fileWriter.close();
         long endTime = System.currentTimeMillis();
