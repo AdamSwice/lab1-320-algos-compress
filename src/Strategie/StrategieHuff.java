@@ -1,5 +1,6 @@
 package Strategie;
 
+
 import Bit.BitInputStream;
 import Bit.BitOutputStream;
 

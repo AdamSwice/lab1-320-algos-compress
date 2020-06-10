@@ -15,7 +15,7 @@ public class StrategieLZW {
             char t = (char) i;
             dictio.put(Character.toString(t), i);
         }
-        BitOutputStream outputStream =  new BitOutputStream(fileOutput);
+        BitOutputStream outputStream =  new BitOutputStream(fileOutput,false);
 //        FileOutputStream outputStream = new FileOutputStream(new File(fileOutput));
         String prefix = "";
         int index;
@@ -79,14 +79,11 @@ public class StrategieLZW {
             if (dictio.containsKey(code)){
                 String tempString = dictio.get(code);
                 original.append(tempString);
+                String nullChecker = dictio.get(oldValue) == null? "" : dictio.get(oldValue);
                 if (dictio.size() == 511){
                     initializeDictioDecompress(dictio, i);
                     i=256;
                 }
-                if (i == 256) {
-                    System.out.print(code);
-                }
-                String nullChecker = dictio.get(oldValue) == null? "" : dictio.get(oldValue);
                 dictio.put(i, nullChecker + tempString.charAt(0));
                 i++;
                 oldValue = code;
