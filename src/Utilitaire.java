@@ -64,11 +64,31 @@ public class Utilitaire {
 
     public static String convertTxtToString(String filePath) {
         StringBuilder stringBuilder = new StringBuilder();
-        try (Stream<String> stream = Files.lines (Paths.get(filePath), StandardCharsets.UTF_8)) {
-            stream.forEach( string -> stringBuilder.append(string).append("\n"));
+//        try (Stream<String> stream = Files.lines (Paths.get(filePath), StandardCharsets.UTF_8)) {
+//            stream.forEach( string -> stringBuilder.append(string).append("\n"));
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+
+        File f=new File(filePath);
+        FileInputStream fileInputStream = null;
+        try {
+            fileInputStream = new FileInputStream(f);
+            BufferedInputStream bufferedInputStream = new BufferedInputStream(fileInputStream);
+            byte[] bytes = bufferedInputStream.readAllBytes();
+            for(byte b : bytes){
+                int bytetoint = Byte.toUnsignedInt(b);
+                char c = (char) bytetoint;
+                stringBuilder.append(c);
+            }
+
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
+
         return stringBuilder.toString();
     }
 
