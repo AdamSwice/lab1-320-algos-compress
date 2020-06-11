@@ -26,11 +26,12 @@ public class StrategieLZW {
         long startTime = System.currentTimeMillis();
         while ((index = fileReader.read()) != -1){
        // for(index = 0; index < bytes.length ; index++){
+            //while current bite< bytes.length
             //int bytetoint = Byte.toUnsignedInt(bytes[currentByte++]
             //char c = (char) bytetoint
-            String tempString = prefix + (char) index; //prefix + c
-            if (dictio.containsKey(tempString)){
-                prefix = tempString;
+            String combinaison = prefix + (char) index; //prefix + c
+            if (dictio.containsKey(combinaison)){
+                prefix = combinaison;
             } else {
                 int code = dictio.get(prefix);
                 String binaryCode = String.format("%16s", Integer.toBinaryString(code)).replaceAll(" ","0");
@@ -40,7 +41,7 @@ public class StrategieLZW {
                     initializeDictioCompress(dictio, i);
                     i=256;
                 }
-                dictio.put(tempString, i);
+                dictio.put(combinaison, i);
                 i++;
                 prefix = "" + (char) index;
             }
@@ -86,28 +87,28 @@ public class StrategieLZW {
            // System.out.println(original.length());
             code = Integer.parseInt(negativeBitChecker,2);
             if (dictio.containsKey(code)){
-                String tempString = dictio.get(code);
-                original.append(tempString);
+                String combinaison = dictio.get(code);
+                original.append(combinaison);
                 String nullChecker = dictio.get(oldValue) == null? "" : dictio.get(oldValue);
                 if (dictio.size() == 65535){
                     initializeDictioDecompress(dictio, i);
                     i=256;
                 }
-                dictio.put(i, nullChecker + tempString.charAt(0));
+                dictio.put(i, nullChecker + combinaison.charAt(0));
                 i++;
                 oldValue = code;
             } else {
-                String tempString = dictio.get(oldValue);
+                String combinaison = dictio.get(oldValue);
                 if (i == 65535){
                     initializeDictioDecompress(dictio, i);
                     i=256;
                 }
-                if ((tempString+tempString.charAt(0)).contains("null")){
+                if ((combinaison+combinaison.charAt(0)).contains("null")){
                    // System.out.println(code);
                 }
-                dictio.put(i, tempString + tempString.charAt(0));
+                dictio.put(i, combinaison + combinaison.charAt(0));
                 i++;
-                original.append(tempString + tempString.charAt(0));
+                original.append(combinaison + combinaison.charAt(0));
             }
         }
         inputStream.close();
