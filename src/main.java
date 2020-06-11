@@ -29,9 +29,9 @@ public class main {
         Utilitaire.validator(choixAlgo, choixCompress, fileIn, fileOut);*/
 
         String choixAlgo = "lzw";
-        String choixCompress = "c";
-        String fileIn = "C:/Users/faute/OneDrive/Documents//GitHub/lab1-320-algos-compress/src/world.txt";
-        String fileOut = "C://Users//faute/OneDrive/Documents/GitHub/lab1-320-algos-compress/src/worldlzw.txt";
+        String choixCompress = "d";
+        String fileIn = "C:/Users/faute/OneDrive/Documents//GitHub/lab1-320-algos-compress/src/worldlzw.txt";
+        String fileOut = "C://Users//faute/OneDrive/Documents/GitHub/lab1-320-algos-compress/src/worldlzwd.txt";
         Utilitaire.validator(choixAlgo, choixCompress, fileIn, fileOut);
 //        String choixAlgo = "huff";
 //        String choixCompress = "d";

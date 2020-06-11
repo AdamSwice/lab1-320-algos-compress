@@ -21,7 +21,7 @@ public class Utilitaire {
                 if ("lzw".equalsIgnoreCase(choixAlgo)) {
                     File toCompress = new File(fileIn);
                     FileReader fileReader = new FileReader(toCompress);
-                    StrategieLZW.compress(fileReader, fileOut);
+                    StrategieLZW.compress(fileReader, fileOut, toCompress);
                 }
                 else if ("huff".equalsIgnoreCase(choixAlgo)) {
                     long startTime = System.currentTimeMillis();

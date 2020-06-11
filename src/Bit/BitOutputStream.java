@@ -1,13 +1,14 @@
 package Bit;
 
 /*
-* Classe donnée par le cours LOG320 dans le cadre du laboratoire 1, trouvable sur moodle: https://courses.cs.washington.edu/courses/cse143/12sp/homework/ass8/BitOutputStream.java
-* */
+ * Classe donnée par le cours LOG320 dans le cadre du laboratoire 1, trouvable sur moodle: https://courses.cs.washington.edu/courses/cse143/12sp/homework/ass8/BitOutputStream.java
+ * */
 
 import java.io.*;
 
 public class BitOutputStream {
     private FileOutputStream output;
+    private BufferedOutputStream bufferedOutputStream;
     public int digits;     // a buffer used to build up next set of digits
     private int numDigits;  // how many digits are currently in the buffer
 
@@ -15,9 +16,10 @@ public class BitOutputStream {
 
     // pre : given file name is legal
     // post: creates a BitOutputStream sending output to the file
-    public BitOutputStream(String file,Boolean append) {
+    public BitOutputStream(String file, Boolean append) {
         try {
-            output = new FileOutputStream(file,append);
+            output = new FileOutputStream(file, append);
+            bufferedOutputStream = new BufferedOutputStream(output);
         } catch (IOException e) {
             throw new RuntimeException(e.toString());
         }
@@ -40,7 +42,7 @@ public class BitOutputStream {
     //       closing the output.
     private void flush() {
         try {
-            output.write(digits);
+            bufferedOutputStream.write(digits);
         } catch (IOException e) {
             throw new RuntimeException(e.toString());
         }
@@ -52,13 +54,16 @@ public class BitOutputStream {
     public void close() {
         if (numDigits > 0)
             flush();
+
         try {
-            output.close();
+            bufferedOutputStream.flush();
+            bufferedOutputStream.close();
         } catch (IOException e) {
             throw new RuntimeException(e.toString());
         }
     }
-    public int getDigits(){
+
+    public int getDigits() {
         return digits;
     }
 
