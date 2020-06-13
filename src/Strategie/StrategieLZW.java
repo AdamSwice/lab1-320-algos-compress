@@ -61,7 +61,7 @@ public class StrategieLZW {
         System.out.println("duree: " + (endTime - startTime) + "ms");
     }
 
-    public static void decompress(BitInputStream inputStream, String fileOutput, File fileToDecompress) throws Exception {
+    public static void decompress(BitInputStream inputStream, String fileOutput) throws Exception {
         HashMap<Integer, String> dictio = new HashMap<>();
         int i;
         String negativeBitChecker = "";
@@ -104,13 +104,12 @@ public class StrategieLZW {
             }
         }
         inputStream.close();
-       /* FileWriter fileWriter = new FileWriter(new File(fileOutput));
+        FileWriter fileWriter = new FileWriter(new File(fileOutput));
         fileWriter.write(original.toString());
         fileWriter.flush();
-        fileWriter.close();*/
-       FileOutputStream fileOutputStream = new FileOutputStream(fileToDecompress);
-       BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(fileOutputStream);
-
+        fileWriter.close();
+        /*FileOutputStream fileOutputStream = new FileOutputStream(fileToDecompress);
+        BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(fileOutputStream);*/
         long endTime = System.currentTimeMillis();
         System.out.println("duree: " + (endTime - startTime) + "ms");
     }

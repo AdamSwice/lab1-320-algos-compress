@@ -8,7 +8,27 @@
   <component name="ChangeListManager">
     <list default="true" id="52b29df3-de38-49c6-ab21-d63dc2faee33" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/loremipsumd.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/Strategie/StrategieHuff$HuffmanNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/Strategie/StrategieHuff$HuffmanNode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/Strategie/StrategieHuff.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/Strategie/StrategieHuff.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/Strategie/StrategieLZW.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/Strategie/StrategieLZW.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/Utilitaire.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/Utilitaire.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/biblec.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/bibled.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/compressedexemple.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/exemple2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/exemple2c.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/exemple2d.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/exemplec.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/loremipsum.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/loremipsumc.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/test.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/test2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/test2c.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/test2d.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/testc.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/testd.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab1-320-algos-compress/worldd.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Strategie/StrategieLZW.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Strategie/StrategieLZW.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Utilitaire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utilitaire.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.java" afterDir="false" />
@@ -107,7 +127,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591888323319</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Optimization des algos LZW">
+      <created>1592080352938</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1592080352938</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -128,7 +155,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="optimization lzw" />
     <MESSAGE value="Optimization des algos" />
-    <option name="LAST_COMMIT_MESSAGE" value="Optimization des algos" />
+    <MESSAGE value="Optimization des algos LZW" />
+    <option name="LAST_COMMIT_MESSAGE" value="Optimization des algos LZW" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1130" y="594" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1591262359724">
@@ -143,10 +171,10 @@
       <screen x="0" y="0" width="2560" height="1409" />
     </state>
     <state x="1250" y="0" width="801" height="1050" key="#xdebugger.evaluate/0.0.2560.1409/-1920.0.1920.1050@0.0.2560.1409" timestamp="1591906526057" />
-    <state x="522" y="89" key="CommitChangelistDialog2" timestamp="1591889043886">
+    <state x="522" y="89" key="CommitChangelistDialog2" timestamp="1592080352222">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="522" y="89" key="CommitChangelistDialog2/0.0.1920.1040/-1920.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591889043886" />
+    <state x="522" y="89" key="CommitChangelistDialog2/0.0.1920.1040/-1920.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1592080352222" />
     <state x="696" y="121" key="CommitChangelistDialog2/0.0.2560.1409/-1920.0.1920.1050@0.0.2560.1409" timestamp="1591263469958" />
     <state width="399" height="466" key="DebuggerActiveHint" timestamp="1589820005863">
       <screen x="0" y="0" width="2560" height="1409" />
@@ -156,28 +184,28 @@
       <screen x="0" y="0" width="2560" height="1409" />
     </state>
     <state x="1061" y="431" key="FileChooserDialogImpl/0.0.2560.1409/-1920.0.1920.1050@0.0.2560.1409" timestamp="1591262400178" />
-    <state width="1877" height="186" key="GridCell.Tab.0.bottom" timestamp="1592079484761">
+    <state width="938" height="186" key="GridCell.Tab.0.bottom" timestamp="1592084218319">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="186" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1592079484761" />
+    <state width="938" height="186" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1592084218319" />
     <state width="2517" height="270" key="GridCell.Tab.0.bottom/0.0.2560.1409/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1590079581106" />
     <state width="2517" height="442" key="GridCell.Tab.0.bottom/0.0.2560.1409/-1920.0.1920.1050@0.0.2560.1409" timestamp="1591906471158" />
-    <state width="1877" height="186" key="GridCell.Tab.0.center" timestamp="1592079484761">
+    <state width="938" height="186" key="GridCell.Tab.0.center" timestamp="1592084218319">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="186" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1592079484761" />
+    <state width="938" height="186" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1592084218319" />
     <state width="2517" height="270" key="GridCell.Tab.0.center/0.0.2560.1409/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1590079581106" />
     <state width="2517" height="442" key="GridCell.Tab.0.center/0.0.2560.1409/-1920.0.1920.1050@0.0.2560.1409" timestamp="1591906471158" />
-    <state width="1877" height="186" key="GridCell.Tab.0.left" timestamp="1592079484761">
+    <state width="938" height="186" key="GridCell.Tab.0.left" timestamp="1592084218319">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="186" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1592079484761" />
+    <state width="938" height="186" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1592084218319" />
     <state width="2517" height="270" key="GridCell.Tab.0.left/0.0.2560.1409/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1590079581105" />
     <state width="2517" height="442" key="GridCell.Tab.0.left/0.0.2560.1409/-1920.0.1920.1050@0.0.2560.1409" timestamp="1591906471158" />
-    <state width="1877" height="186" key="GridCell.Tab.0.right" timestamp="1592079484761">
+    <state width="938" height="186" key="GridCell.Tab.0.right" timestamp="1592084218319">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="186" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1592079484761" />
+    <state width="938" height="186" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1592084218319" />
     <state width="2517" height="270" key="GridCell.Tab.0.right/0.0.2560.1409/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1590079581106" />
     <state width="2517" height="442" key="GridCell.Tab.0.right/0.0.2560.1409/-1920.0.1920.1050@0.0.2560.1409" timestamp="1591906471158" />
     <state width="2517" height="442" key="GridCell.Tab.1.bottom" timestamp="1591906471867">
@@ -208,10 +236,10 @@
       <screen x="0" y="0" width="2560" height="1409" />
     </state>
     <state x="782" y="347" key="SettingsEditor/0.0.2560.1409/-1920.0.1920.1050@0.0.2560.1409" timestamp="1590515382653" />
-    <state x="655" y="323" key="Vcs.Push.Dialog.v2" timestamp="1591888681633">
+    <state x="655" y="323" key="Vcs.Push.Dialog.v2" timestamp="1592080357503">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="655" y="323" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591888681633" />
+    <state x="655" y="323" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1592080357503" />
     <state x="873" y="438" key="Vcs.Push.Dialog.v2/0.0.2560.1409/-1920.0.1920.1050@0.0.2560.1409" timestamp="1591263407862" />
     <state width="1287" height="712" key="XDebugger.FullValuePopup" timestamp="1591264462740">
       <screen x="0" y="0" width="2560" height="1409" />
@@ -251,11 +279,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Strategie/StrategieHuff.java</url>
-          <line>60</line>
-          <option name="timeStamp" value="170" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Strategie/StrategieHuff.java</url>
           <line>47</line>

@@ -31,8 +31,7 @@ public class Utilitaire {
                 if ("lzw".equalsIgnoreCase(choixAlgo)) {
                     //FileInputStream inputStream = new FileInputStream(fileIn);
                     BitInputStream inputStream = new BitInputStream(fileIn);
-                    File fileToDecompress = new File(fileIn);
-                    StrategieLZW.decompress(inputStream, fileOut, fileToDecompress);
+                    StrategieLZW.decompress(inputStream, fileOut);
                 } else if ("huff".equalsIgnoreCase(choixAlgo)) {
                     long startTime = System.currentTimeMillis();
                     BitInputStream inputStream = new BitInputStream(fileIn);
