@@ -4,6 +4,7 @@ package Strategie;
 import Bit.BitInputStream;
 import Bit.BitOutputStream;
 
+import java.awt.image.BufferedImage;
 import java.io.*;
 import java.util.*;
 
@@ -76,7 +77,7 @@ public class StrategieHuff {
     }
 
     public static void decompress(BitInputStream inputStream, String fileInput, String fileOutput) {
-        StringBuilder uncompressedData = new StringBuilder();
+        ArrayList<Byte> uncompressedData = new ArrayList<>();
 
         //Gets the huffman tree and the ErrorFactor
         readObject(fileInput);
@@ -92,20 +93,23 @@ public class StrategieHuff {
             if (j == 0) {
                 temp = temp.left;
                 if (temp.isLeaf()) {
-                    uncompressedData.append(temp.data);
+                    byte b= (byte)temp.data;
+                    uncompressedData.add(b);
                     temp = root;
                 }
             }
             if (j == 1) {
                 temp = temp.right;
                 if (temp.isLeaf()) {
-                    uncompressedData.append(temp.data);
+                    byte b= (byte)temp.data;
+                    uncompressedData.add(b);
                     temp = root;
                 }
             }
         }
+
         //The uncompressed data is written to the disk
-        writeToFile(uncompressedData.toString(), fileOutput);
+        writeToFile(uncompressedData, fileOutput);
     }
 
     private static void bitWriter(BitOutputStream writer, String bitString) throws Exception {
@@ -225,19 +229,19 @@ public class StrategieHuff {
         return 0;
     }
 
-    private static void writeToFile(String data, String path) {
+    private static void writeToFile(ArrayList<Byte> data, String path) {
 
         try {
-            File compressedFile = new File(path);
-            if (!compressedFile.exists()) {
-                compressedFile.createNewFile();
+            byte[] a =new byte[data.size()];
+            int i=0;
+            for(byte b : data){
+                a[i]=b;
+                i++;
             }
-
-            FileWriter fileWriter = new FileWriter(compressedFile.getAbsoluteFile());
-            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-            bufferedWriter.write(data);
-            bufferedWriter.close();
-
+            FileOutputStream fos = new FileOutputStream(path);
+            BufferedOutputStream buff = new BufferedOutputStream(fos);
+            buff.write(a);
+            fos.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
