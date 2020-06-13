@@ -6,13 +6,6 @@ import Strategie.StrategieOPT;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.*;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Stream;
 
 public class Utilitaire {
     public static void validator(String choixAlgo, String choixCompress, String fileIn, String fileOut) {
@@ -20,8 +13,7 @@ public class Utilitaire {
             if ("c".equalsIgnoreCase(choixCompress)) {
                 if ("lzw".equalsIgnoreCase(choixAlgo)) {
                     File toCompress = new File(fileIn);
-                    FileReader fileReader = new FileReader(toCompress);
-                    StrategieLZW.compress(fileReader, fileOut, toCompress);
+                    StrategieLZW.compress(fileOut, toCompress);
                 }
                 else if ("huff".equalsIgnoreCase(choixAlgo)) {
                     long startTime = System.currentTimeMillis();
@@ -39,7 +31,8 @@ public class Utilitaire {
                 if ("lzw".equalsIgnoreCase(choixAlgo)) {
                     //FileInputStream inputStream = new FileInputStream(fileIn);
                     BitInputStream inputStream = new BitInputStream(fileIn);
-                    StrategieLZW.decompress(inputStream, fileOut);
+                    File fileToDecompress = new File(fileIn);
+                    StrategieLZW.decompress(inputStream, fileOut, fileToDecompress);
                 } else if ("huff".equalsIgnoreCase(choixAlgo)) {
                     long startTime = System.currentTimeMillis();
                     BitInputStream inputStream = new BitInputStream(fileIn);
