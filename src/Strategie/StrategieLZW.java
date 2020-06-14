@@ -65,14 +65,18 @@ public class StrategieLZW {
         HashMap<Integer, String> dictio = new HashMap<>();
         int i;
         String negativeBitChecker = "";
+        FileOutputStream fileOutputStream = new FileOutputStream(new File(fileOutput));
+        BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(fileOutputStream);
         for (i = 0; i < 256; i++) {
             char t = (char) i;
             dictio.put(i, Character.toString(t));
         }
-        StringBuilder original = new StringBuilder("");
+        // StringBuilder original = new StringBuilder("");
         int code = Integer.parseInt(readBit(inputStream), 2);
         if (dictio.containsKey(code)) {
-            original.append(dictio.get(code));
+            // original.append(dictio.get(code));
+            char[] chars = dictio.get(code).toCharArray();
+            for (char aChar : chars) bufferedOutputStream.write(aChar);
         }
         int oldValue = code;
         long startTime = System.currentTimeMillis();
@@ -80,7 +84,11 @@ public class StrategieLZW {
             code = Integer.parseInt(negativeBitChecker, 2);
             if (dictio.containsKey(code)) {
                 String combinaison = dictio.get(code);
-                original.append(combinaison);
+                for (int j = 0; j < combinaison.length(); j++) {
+                    bufferedOutputStream.write(combinaison.charAt(j));
+                }
+                //bufferedOutputStream.write(combinaison.getBytes());
+                //original.append(combinaison);
                 String nullChecker = dictio.get(oldValue) == null ? "" : dictio.get(oldValue);
                 if (dictio.size() == 65535) {
                     initializeDictioDecompress(dictio, i);
@@ -95,21 +103,26 @@ public class StrategieLZW {
                     initializeDictioDecompress(dictio, i);
                     i = 256;
                 }
-                if ((combinaison + combinaison.charAt(0)).contains("null")) {
+               /* if ((combinaison + combinaison.charAt(0)).contains("null")) {
                     // System.out.println(code);
-                }
+                }*/
                 dictio.put(i, combinaison + combinaison.charAt(0));
                 i++;
-                original.append(combinaison + combinaison.charAt(0));
+                String combinaisons = (combinaison + combinaison.charAt(0));
+                for (int j = 0; j < combinaisons.length(); j++) {
+                    bufferedOutputStream.write(combinaisons.charAt(j));
+                }
+                //bufferedOutputStream.write((combinaison + combinaison.charAt(0)).getBytes());
+
+                // original.append(combinaison + combinaison.charAt(0));
             }
         }
         inputStream.close();
-        FileWriter fileWriter = new FileWriter(new File(fileOutput));
-        fileWriter.write(original.toString());
-        fileWriter.flush();
-        fileWriter.close();
-        /*FileOutputStream fileOutputStream = new FileOutputStream(fileToDecompress);
-        BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(fileOutputStream);*/
+        // String originalToString = original.toString();
+        // byte[] bytes = originalToString.getBytes();
+        // bufferedOutputStream.write(bytes);
+        bufferedOutputStream.flush();
+        bufferedOutputStream.close();
         long endTime = System.currentTimeMillis();
         System.out.println("duree: " + (endTime - startTime) + "ms");
     }
