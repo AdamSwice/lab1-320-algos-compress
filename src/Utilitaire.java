@@ -16,10 +16,7 @@ public class Utilitaire {
                     StrategieLZW.compress(fileOut, file);
                 }
                 else if ("huff".equalsIgnoreCase(choixAlgo)) {
-                    long startTime = System.currentTimeMillis();
                     StrategieHuff.compress(convertTxtToString(fileIn),fileOut);
-                    long endTime = System.currentTimeMillis();
-                    System.out.println("duree: " + (endTime - startTime) + "ms");
                 } else if ("opt".equalsIgnoreCase(choixAlgo)) {
                     File file = new File(fileIn);
                     StrategieOPT.compress(fileOut, file);
@@ -31,11 +28,8 @@ public class Utilitaire {
                     BitInputStream inputStream = new BitInputStream(fileIn);
                     StrategieLZW.decompress(inputStream, fileOut);
                 } else if ("huff".equalsIgnoreCase(choixAlgo)) {
-                    long startTime = System.currentTimeMillis();
                     BitInputStream inputStream = new BitInputStream(fileIn);
                     StrategieHuff.decompress(inputStream, fileIn, fileOut);
-                    long endTime = System.currentTimeMillis();
-                    System.out.println("duree: " + (endTime - startTime) + "ms");
                 } else if ("opt".equalsIgnoreCase(choixAlgo)){
                     BitInputStream inputStream = new BitInputStream(fileIn);
                     StrategieOPT.decompress(inputStream, fileOut);

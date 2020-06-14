@@ -26,7 +26,6 @@ public class StrategieOPT {
 
         String prefix = "";
         int index = 0;
-        long startTime = System.currentTimeMillis();
         while (index < bytes.length) {
 
             int byteToInt = Byte.toUnsignedInt(bytes[index++]);
@@ -67,8 +66,6 @@ public class StrategieOPT {
         outputStream.close();
         fileInputStream.close();
         bufferedInputStream.close();
-        long endTime = System.currentTimeMillis();
-        System.out.println("duree: " + (endTime - startTime) + "ms");
     }
 
     public static void decompress(BitInputStream inputStream, String fileOutput) throws Exception {
@@ -90,7 +87,6 @@ public class StrategieOPT {
             for (char aChar : chars) bufferedOutputStream.write(aChar);
         }
         int oldValue = code;
-        long startTime = System.currentTimeMillis();
         while (!(negativeBitChecker = readBit(inputStream)).contains("-1") && !negativeBitChecker.isEmpty()) {
             code = Integer.parseInt(negativeBitChecker, 2);
 
@@ -126,8 +122,6 @@ public class StrategieOPT {
         inputStream.close();
         bufferedOutputStream.flush();
         bufferedOutputStream.close();
-        long endTime = System.currentTimeMillis();
-        System.out.println("duree: " + (endTime - startTime) + "ms");
     }
 
     private static void bitWriter(BitOutputStream writer, String bitString) throws Exception {
