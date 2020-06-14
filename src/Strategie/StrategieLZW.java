@@ -4,7 +4,6 @@ import Bit.BitInputStream;
 import Bit.BitOutputStream;
 
 import java.io.*;
-import java.nio.ByteBuffer;
 import java.util.HashMap;
 
 public class StrategieLZW {
@@ -18,7 +17,7 @@ public class StrategieLZW {
             dictio.put(Character.toString(t), i);
         }
         //Buffered
-        BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(new FileOutputStream(fileOutput));
+        BitOutputStream outputStream = new BitOutputStream(fileOutput, false);
         FileInputStream fileInputStream = new FileInputStream(toCompress);
         BufferedInputStream bufferedInputStream = new BufferedInputStream(fileInputStream);
         byte[] bytes = bufferedInputStream.readAllBytes();
@@ -33,13 +32,8 @@ public class StrategieLZW {
                 prefix = combinaison;
             } else {
                 int code = dictio.get(prefix);
-                bitWriter(byteToInt);
                 String binaryCode = String.format("%16s", Integer.toBinaryString(code)).replaceAll(" ", "0");
-                String binaryCodeOne = binaryCode.substring(0, (binaryCode).length()/2);
-                String binaryCodeTwo = binaryCode.substring(binaryCode.length()/2);
-
-//                bitWriter(bufferedOutputStream, binaryCodeOne, binaryCodeTwo);
-                //bitWriter(outputStream, binaryCode);
+                bitWriter(outputStream, binaryCode);
                 if (dictio.size() == 65535) {
                     initializeDictioCompress(dictio, i);
                     i = 256;
@@ -53,19 +47,14 @@ public class StrategieLZW {
         if (dictio.containsKey(prefix)) {
             int code = dictio.get(prefix);
             String binaryCode = String.format("%16s", Integer.toBinaryString(code)).replaceAll(" ", "0");
-            String binaryCodeOne = binaryCode.substring(0, (binaryCode).length()/2);
-            String binaryCodeTwo = binaryCode.substring(binaryCode.length()/2);
-            bitWriter(bufferedOutputStream, binaryCodeOne, binaryCodeTwo);
+            bitWriter(outputStream, binaryCode);
         } else {
             dictio.put(prefix, i);
             int code = dictio.get(prefix);
             String binaryCode = String.format("%16s", Integer.toBinaryString(code)).replaceAll(" ", "0");
-            String binaryCodeOne = binaryCode.substring(0, (binaryCode).length()/2);
-            String binaryCodeTwo = binaryCode.substring(binaryCode.length()/2);
-            bitWriter(bufferedOutputStream, binaryCodeOne, binaryCodeTwo);
+            bitWriter(outputStream, binaryCode);
         }
-        bufferedOutputStream.flush();
-        bufferedOutputStream.close();
+        outputStream.close();
         fileInputStream.close();
         bufferedInputStream.close();
         long endTime = System.currentTimeMillis();
@@ -78,10 +67,6 @@ public class StrategieLZW {
         String negativeBitChecker = "";
         FileOutputStream fileOutputStream = new FileOutputStream(new File(fileOutput));
         BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(fileOutputStream);
-        FileInputStream fileInputStream = new FileInputStream(fileOutput);
-        BufferedInputStream bufferedInputStream = new BufferedInputStream(fileInputStream);
-
-        byte[] bytes = bufferedInputStream.readAllBytes();
         for (i = 0; i < 256; i++) {
             char t = (char) i;
             dictio.put(i, Character.toString(t));
@@ -95,14 +80,8 @@ public class StrategieLZW {
         }
         int oldValue = code;
         long startTime = System.currentTimeMillis();
-        while (i < bytes.length) {
-            byte[] buffer = new byte[2];
-            for (int j = 0; j < buffer.length; j++){
-                buffer[j] = bytes[i++];
-            }
-            ByteBuffer wrapper = ByteBuffer.wrap(buffer);
-            code = wrapper.getInt();
-            //code = Integer.parseInt(negativeBitChecker, 2);
+        while (!(negativeBitChecker = readBit(inputStream)).contains("-1") && !negativeBitChecker.isEmpty()) {
+            code = Integer.parseInt(negativeBitChecker, 2);
             if (dictio.containsKey(code)) {
                 String combinaison = dictio.get(code);
                 for (int j = 0; j < combinaison.length(); j++) {
@@ -148,10 +127,14 @@ public class StrategieLZW {
         System.out.println("duree: " + (endTime - startTime) + "ms");
     }
 
-    private static byte[] bitWriter(int value){
-        ByteBuffer byteBuffer = ByteBuffer.allocate(2);
-        return byteBuffer.putInt(value).array();
-
+    private static void bitWriter(BitOutputStream writer, String bitString) throws Exception {
+        bitString += "";
+        char[] chars = bitString.toCharArray();
+        int bit;
+        for (int i = 0, n = chars.length; i < n; i++) {
+            bit = Integer.parseInt(chars[i] + "");
+            writer.writeBit(bit);
+        }
     }
 
     private static void initializeDictioCompress(HashMap dictio, int i) {
@@ -180,6 +163,7 @@ public class StrategieLZW {
         while (binaryCodeString.length() < 16 && (bit = inputStream.readBit()) != -1) {
             binaryCodeString += Integer.toString(bit);
         }
+        binaryCodeString += "";
         return new StringBuilder(binaryCodeString).toString();
     }
 
