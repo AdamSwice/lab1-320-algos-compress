@@ -64,7 +64,7 @@ public class StrategieLZW {
     public static void decompress(BitInputStream inputStream, String fileOutput) throws Exception {
         HashMap<Integer, String> dictio = new HashMap<>();
         int i;
-        String negativeBitChecker;
+        String negativeBitChecker = "";
         FileOutputStream fileOutputStream = new FileOutputStream(new File(fileOutput));
         BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(fileOutputStream);
         for (i = 0; i < 256; i++) {
@@ -114,12 +114,12 @@ public class StrategieLZW {
         System.out.println("duree: " + (endTime - startTime) + "ms");
     }
 
-    private static void bitWriter(BitOutputStream writer, String bitString) {
+    private static void bitWriter(BitOutputStream writer, String bitString) throws Exception {
         bitString += "";
         char[] chars = bitString.toCharArray();
         int bit;
-        for (char aChar : chars) {
-            bit = Integer.parseInt(aChar + "");
+        for (int i = 0, n = chars.length; i < n; i++) {
+            bit = Integer.parseInt(chars[i] + "");
             writer.writeBit(bit);
         }
     }
