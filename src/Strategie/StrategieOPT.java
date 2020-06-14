@@ -3,130 +3,157 @@ package Strategie;
 import Bit.BitInputStream;
 import Bit.BitOutputStream;
 
-import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
+import java.io.*;
 import java.util.HashMap;
 
 public class StrategieOPT {
-    final static String binaryCodeLength = "%20s";
-    public static void compress(FileReader fileReader, String fileOutput) throws Exception {
+    final static String binaryCodeLength = "%19s";
+    private static final int BYTE_AMOUNT_INT_19 = 524287;
+
+    public static void compress(String fileOutput, File toCompress) throws Exception {
         HashMap<String, Integer> dictio = new HashMap<>();
         int i;
 
-        for (i = 0; i < 256; i++){
+        for (i = 0; i < 256; i++) {
             char t = (char) i;
             dictio.put(Character.toString(t), i);
         }
-        BitOutputStream outputStream =  new BitOutputStream(fileOutput,false);
+
+        BitOutputStream outputStream = new BitOutputStream(fileOutput, false);
+        FileInputStream fileInputStream = new FileInputStream(toCompress);
+        BufferedInputStream bufferedInputStream = new BufferedInputStream(fileInputStream);
+        byte[] bytes = bufferedInputStream.readAllBytes();
+
         String prefix = "";
-        int index;
+        int index = 0;
         long startTime = System.currentTimeMillis();
-        while ((index = fileReader.read()) != -1){
-            String tempString = prefix + (char) index;
-            if (dictio.containsKey(tempString)){
-                prefix = tempString;
+        while (index < bytes.length) {
+
+            int byteToInt = Byte.toUnsignedInt(bytes[index++]);
+            char c = (char) byteToInt;
+
+            String combinaison = prefix + c;
+            if (dictio.containsKey(combinaison)) {
+                prefix = combinaison;
             } else {
                 int code = dictio.get(prefix);
-                String binaryCode = String.format(binaryCodeLength, Integer.toBinaryString(code)).replaceAll(" ","0");
+                String binaryCode = String.format(binaryCodeLength, Integer.toBinaryString(code)).replaceAll(" ", "0");
                 bitWriter(outputStream, binaryCode);
-                if (dictio.size() == 1048575){
+
+                if (dictio.size() == BYTE_AMOUNT_INT_19) {
                     initializeDictioCompress(dictio, i);
-                    i=256;
+                    i = 256;
                 }
-                dictio.put(tempString, i);
+                dictio.put(combinaison, i);
+
                 i++;
-                prefix = "" + (char) index;
+                prefix = c + "";
             }
         }
 
-        if (dictio.containsKey(prefix)){
+        if (dictio.containsKey(prefix)) {
             int code = dictio.get(prefix);
-            String binaryCode = String.format(binaryCodeLength, Integer.toBinaryString(code)).replaceAll(" ","0");
+            String binaryCode = String.format(binaryCodeLength, Integer.toBinaryString(code)).replaceAll(" ", "0");
             bitWriter(outputStream, binaryCode);
+
         } else {
             dictio.put(prefix, i);
             int code = dictio.get(prefix);
-            String binaryCode = String.format(binaryCodeLength, Integer.toBinaryString(code)).replaceAll(" ","0");
+            String binaryCode = String.format(binaryCodeLength, Integer.toBinaryString(code)).replaceAll(" ", "0");
             bitWriter(outputStream, binaryCode);
+
         }
-        fileReader.close();
+
         outputStream.close();
+        fileInputStream.close();
+        bufferedInputStream.close();
         long endTime = System.currentTimeMillis();
         System.out.println("duree: " + (endTime - startTime) + "ms");
     }
 
-    public static void decompress(BitInputStream inputStream, String fileOutput) throws Exception{
+    public static void decompress(BitInputStream inputStream, String fileOutput) throws Exception {
         HashMap<Integer, String> dictio = new HashMap<>();
         int i;
-        String negativeBitChecker="";
-        for (i=0;i<256; i++){
+        String negativeBitChecker = "";
+        FileOutputStream fileOutputStream = new FileOutputStream(new File(fileOutput));
+        BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(fileOutputStream);
+
+        for (i = 0; i < 256; i++) {
             char t = (char) i;
             dictio.put(i, Character.toString(t));
         }
-        StringBuilder original = new StringBuilder("");
-        int code = Integer.parseInt(readBit(inputStream),2);
-        if (dictio.containsKey(code)){
-            original.append(dictio.get(code));
+
+        int code = Integer.parseInt(readBit(inputStream), 2);
+
+        if (dictio.containsKey(code)) {
+            char[] chars = dictio.get(code).toCharArray();
+            for (char aChar : chars) bufferedOutputStream.write(aChar);
         }
         int oldValue = code;
         long startTime = System.currentTimeMillis();
-        while (!(negativeBitChecker = readBit(inputStream)).contains("-1") && !negativeBitChecker.isEmpty()){
-            code = Integer.parseInt(negativeBitChecker,2);
-            if (dictio.containsKey(code)){
-                String tempString = dictio.get(code);
-                original.append(tempString);
-                String nullChecker = dictio.get(oldValue) == null? "" : dictio.get(oldValue);
-                if (dictio.size() == 1048575){
-                    initializeDictioDecompress(dictio, i);
-                    i=256;
+        while (!(negativeBitChecker = readBit(inputStream)).contains("-1") && !negativeBitChecker.isEmpty()) {
+            code = Integer.parseInt(negativeBitChecker, 2);
+
+            if (dictio.containsKey(code)) {
+                String combinaison = dictio.get(code);
+                for (int j = 0; j < combinaison.length(); j++) {
+                    bufferedOutputStream.write(combinaison.charAt(j));
                 }
-                dictio.put(i, nullChecker + tempString.charAt(0));
+                String nullChecker = dictio.get(oldValue) == null ? "" : dictio.get(oldValue);
+                if (dictio.size() == BYTE_AMOUNT_INT_19) {
+                    initializeDictioDecompress(dictio, i);
+                    i = 256;
+                }
+                dictio.put(i, nullChecker + combinaison.charAt(0));
                 i++;
                 oldValue = code;
             } else {
-                String tempString = dictio.get(oldValue);
-                if (i == 1048575){
+                String combinaison = dictio.get(oldValue);
+                if (i == BYTE_AMOUNT_INT_19) {
                     initializeDictioDecompress(dictio, i);
-                    i=256;
+                    i = 256;
                 }
-                dictio.put(i, tempString + tempString.charAt(0));
+                dictio.put(i, combinaison + combinaison.charAt(0));
+                oldValue = code;
                 i++;
-                original.append(tempString + tempString.charAt(0));
+                String combinaisons = (combinaison + combinaison.charAt(0));
+                for (int j = 0; j < combinaisons.length(); j++) {
+                    bufferedOutputStream.write(combinaisons.charAt(j));
+                }
             }
         }
+
         inputStream.close();
-        FileWriter fileWriter = new FileWriter(new File(fileOutput));
-        fileWriter.write(original.toString());
-        fileWriter.flush();
-        fileWriter.close();
+        bufferedOutputStream.flush();
+        bufferedOutputStream.close();
         long endTime = System.currentTimeMillis();
         System.out.println("duree: " + (endTime - startTime) + "ms");
     }
 
-    private static void bitWriter(BitOutputStream writer, String bitString) throws Exception{
+    private static void bitWriter(BitOutputStream writer, String bitString) throws Exception {
         bitString += "";
         char[] chars = bitString.toCharArray();
         int bit;
-        for (int i = 0, n = chars.length; i < n; i++) {
-            bit = Integer.parseInt(chars[i]+"");
+        for (char aChar : chars) {
+            bit = Integer.parseInt(aChar + "");
             writer.writeBit(bit);
         }
     }
 
-    private static void initializeDictioCompress(HashMap dictio, int i){
+    private static void initializeDictioCompress(HashMap<String, Integer> dictio, int i) {
         dictio.clear();
-        i=0;
-        while (i<256){
+        i = 0;
+        while (i < 256) {
             char t = (char) i;
             dictio.put(Character.toString(t), i);
             i++;
         }
     }
-    private static void initializeDictioDecompress(HashMap dictio, int i){
+
+    private static void initializeDictioDecompress(HashMap<Integer, String> dictio, int i) {
         dictio.clear();
-        i=0;
-        while (i<256){
+        i = 0;
+        while (i < 256) {
             char t = (char) i;
             dictio.put(i, Character.toString(t));
             i++;
@@ -134,13 +161,12 @@ public class StrategieOPT {
     }
 
     private static String readBit(BitInputStream inputStream) {
-        String binaryCodeString = "";
+        StringBuilder binaryCodeString = new StringBuilder();
         int bit;
-        while (binaryCodeString.length() < 20 && (bit = inputStream.readBit() )!= -1) {
-            binaryCodeString +=  Integer.toString(bit);
+        while (binaryCodeString.length() < 19 && (bit = inputStream.readBit()) != -1) {
+            binaryCodeString.append(bit);
         }
-        binaryCodeString += "";
-        return new StringBuilder(binaryCodeString).toString();
+        return binaryCodeString.toString();
     }
 
 }

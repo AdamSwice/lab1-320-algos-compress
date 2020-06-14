@@ -7,7 +7,9 @@ import java.io.*;
 import java.util.HashMap;
 
 public class StrategieLZW {
-    final static String binaryCodeLength = "%15s";
+    final static String binaryCodeLength = "%20s";
+    public static final int BYTE_AMOUNT_INT_20 = 1048575;
+
     public static void compress(String fileOutput, File toCompress) throws Exception {
         HashMap<String, Integer> dictio = new HashMap<>();
         int i;
@@ -38,14 +40,14 @@ public class StrategieLZW {
                 String binaryCode = String.format(binaryCodeLength, Integer.toBinaryString(code)).replaceAll(" ", "0");
                 bitWriter(outputStream, binaryCode);
 
-                if (dictio.size() == 32567) {
+                if (dictio.size() == BYTE_AMOUNT_INT_20) {
                     initializeDictioCompress(dictio, i);
                     i = 256;
                 }
                 dictio.put(combinaison, i);
 
                 i++;
-                prefix = "" + c;
+                prefix = c + "";
             }
 
         }
@@ -99,7 +101,7 @@ public class StrategieLZW {
                     bufferedOutputStream.write(combinaison.charAt(j));
                 }
                 String nullChecker = dictio.get(oldValue) == null ? "" : dictio.get(oldValue);
-                if (dictio.size() == 32567) {
+                if (dictio.size() == BYTE_AMOUNT_INT_20) {
                     initializeDictioDecompress(dictio, i);
                     i = 256;
                 }
@@ -108,7 +110,7 @@ public class StrategieLZW {
                 oldValue = code;
             } else {
                 String combinaison = dictio.get(oldValue);
-                if (i == 32567) {
+                if (i == BYTE_AMOUNT_INT_20) {
                     initializeDictioDecompress(dictio, i);
                     i = 256;
                 }
@@ -121,29 +123,7 @@ public class StrategieLZW {
                 }
             }
         }
-//        StringBuilder s= new StringBuilder();
-//        while (!(negativeBitChecker = readBit(inputStream)).contains("-1") && !negativeBitChecker.isEmpty()) {
-//            code = Integer.parseInt(negativeBitChecker, 2);
-//            if(i ==278){
-//                System.out.println();
-//            }
-//            if (dictio.containsKey(code)) {
-//                String tempString= dictio.get(code);
-//                s.append(tempString);
-//                dictio.put(i,dictio.get(oldValue)+tempString);
-//                oldValue=code;
-//                i++;
-//            }
-//            else{
-//                String tempString= dictio.get(oldValue);
-//                dictio.put(i,tempString+tempString);
-//                s.append(dictio.get(i));
-//                oldValue = code;
-//                i++;
-//            }
-//
-//
-//        }
+
         inputStream.close();
         bufferedOutputStream.flush();
         bufferedOutputStream.close();
@@ -161,7 +141,7 @@ public class StrategieLZW {
         }
     }
 
-    private static void initializeDictioCompress(HashMap dictio, int i) {
+    private static void initializeDictioCompress(HashMap<String, Integer> dictio, int i) {
         dictio.clear();
         i = 0;
         while (i < 256) {
@@ -171,7 +151,7 @@ public class StrategieLZW {
         }
     }
 
-    private static void initializeDictioDecompress(HashMap dictio, int i) {
+    private static void initializeDictioDecompress(HashMap<Integer, String> dictio, int i) {
         dictio.clear();
         i = 0;
         while (i < 256) {
@@ -182,13 +162,12 @@ public class StrategieLZW {
     }
 
     private static String readBit(BitInputStream inputStream) {
-        String binaryCodeString = "";
+        StringBuilder binaryCodeString = new StringBuilder();
         int bit;
-        while (binaryCodeString.length() < 15 && (bit = inputStream.readBit()) != -1) {
-            binaryCodeString += Integer.toString(bit);
+        while (binaryCodeString.length() < 20 && (bit = inputStream.readBit()) != -1) {
+            binaryCodeString.append(bit);
         }
-        binaryCodeString += "";
-        return new StringBuilder(binaryCodeString).toString();
+        return binaryCodeString.toString();
     }
 
 }

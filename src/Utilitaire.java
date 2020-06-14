@@ -21,15 +21,13 @@ public class Utilitaire {
                     long endTime = System.currentTimeMillis();
                     System.out.println("duree: " + (endTime - startTime) + "ms");
                 } else if ("opt".equalsIgnoreCase(choixAlgo)) {
-                    File toCompress = new File(fileIn);
-                    FileReader fileReader = new FileReader(toCompress);
-                    StrategieOPT.compress(fileReader, fileOut);
+                    File file = new File(fileIn);
+                    StrategieOPT.compress(fileOut, file);
                 } else {
                     System.out.print("erreur dans le choix d'algo. Choississez entre \'lzw\', \'huff\' ou \'opt\'");
                 }
             } else if ("d".equalsIgnoreCase(choixCompress)) {
                 if ("lzw".equalsIgnoreCase(choixAlgo)) {
-                    //FileInputStream inputStream = new FileInputStream(fileIn);
                     BitInputStream inputStream = new BitInputStream(fileIn);
                     StrategieLZW.decompress(inputStream, fileOut);
                 } else if ("huff".equalsIgnoreCase(choixAlgo)) {
