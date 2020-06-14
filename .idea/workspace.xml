@@ -36,49 +36,6 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1c5JNbnxKT6VSGs7tUqmlcN1gtc" />
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="lab1-320-algos-compress" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lab1-320-algos-compress" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lab1-320-algos-compress" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lab1-320-algos-compress" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lab1-320-algos-compress" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lab1-320-algos-compress" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lab1-320-algos-compress" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lab1-320-algos-compress" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
-              <item name="lab1_320_algos_compress_jar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lab1-320-algos-compress" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lab1-320-algos-compress" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-    </panes>
-  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -88,7 +45,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../New folder (2)/lab1-320-algos-compress" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/META-INF" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -163,7 +120,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592108404841</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="fix suite au revert commit">
+      <created>1592172322341</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1592172322341</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -190,6 +154,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="fix suite au revert commit" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="1031" y="555" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1592176574251">
+      <screen x="0" y="0" width="2560" height="1409" />
+    </state>
+    <state x="1031" y="555" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.2560.1409/-1920.0.1920.1050@0.0.2560.1409" timestamp="1592176574251" />
     <state x="1130" y="594" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1591262359724">
       <screen x="0" y="0" width="2560" height="1409" />
     </state>
@@ -206,19 +174,20 @@
       <screen x="0" y="0" width="2560" height="1409" />
     </state>
     <state x="1593" y="152" width="801" height="1039" key="#xdebugger.evaluate/0.0.2560.1409/-1920.0.1920.1050@0.0.2560.1409" timestamp="1592162815511" />
-    <state x="522" y="89" key="CommitChangelistDialog2" timestamp="1592108404327">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="-1398" y="90" key="CommitChangelistDialog2" timestamp="1592172320643">
+      <screen x="-1920" y="0" width="1920" height="1050" />
     </state>
     <state x="522" y="89" key="CommitChangelistDialog2/0.0.1920.1040/-1920.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1592108404327" />
+    <state x="-1398" y="90" key="CommitChangelistDialog2/0.0.2560.1409/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1592172320643" />
     <state x="696" y="121" key="CommitChangelistDialog2/0.0.2560.1409/-1920.0.1920.1050@0.0.2560.1409" timestamp="1591263469958" />
     <state width="399" height="466" key="DebuggerActiveHint" timestamp="1589820005863">
       <screen x="0" y="0" width="2560" height="1409" />
     </state>
     <state width="399" height="466" key="DebuggerActiveHint/0.0.2560.1409/-1920.0.1920.1050@0.0.2560.1409" timestamp="1589820005863" />
-    <state x="1061" y="431" key="FileChooserDialogImpl" timestamp="1591262400178">
+    <state x="1061" y="431" key="FileChooserDialogImpl" timestamp="1592176553327">
       <screen x="0" y="0" width="2560" height="1409" />
     </state>
-    <state x="1061" y="431" key="FileChooserDialogImpl/0.0.2560.1409/-1920.0.1920.1050@0.0.2560.1409" timestamp="1591262400178" />
+    <state x="1061" y="431" key="FileChooserDialogImpl/0.0.2560.1409/-1920.0.1920.1050@0.0.2560.1409" timestamp="1592176553327" />
     <state width="1877" height="186" key="GridCell.Tab.0.bottom" timestamp="1592166981573">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -271,25 +240,26 @@
     <state width="1877" height="221" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591887171015" />
     <state width="1877" height="496" key="GridCell.Tab.1.right/0.0.2560.1409/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1590079581099" />
     <state width="2517" height="314" key="GridCell.Tab.1.right/0.0.2560.1409/-1920.0.1920.1050@0.0.2560.1409" timestamp="1592162823594" />
-    <state x="782" y="347" key="SettingsEditor" timestamp="1590515382653">
+    <state x="782" y="347" key="SettingsEditor" timestamp="1592176598124">
       <screen x="0" y="0" width="2560" height="1409" />
     </state>
-    <state x="782" y="347" key="SettingsEditor/0.0.2560.1409/-1920.0.1920.1050@0.0.2560.1409" timestamp="1590515382653" />
-    <state x="655" y="323" key="Vcs.Push.Dialog.v2" timestamp="1592108410430">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="782" y="347" key="SettingsEditor/0.0.2560.1409/-1920.0.1920.1050@0.0.2560.1409" timestamp="1592176598124" />
+    <state x="-1265" y="326" key="Vcs.Push.Dialog.v2" timestamp="1592172328038">
+      <screen x="-1920" y="0" width="1920" height="1050" />
     </state>
     <state x="655" y="323" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1592108410430" />
+    <state x="-1265" y="326" key="Vcs.Push.Dialog.v2/0.0.2560.1409/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1592172328038" />
     <state x="873" y="438" key="Vcs.Push.Dialog.v2/0.0.2560.1409/-1920.0.1920.1050@0.0.2560.1409" timestamp="1591263407862" />
     <state width="1287" height="712" key="XDebugger.FullValuePopup" timestamp="1591264462740">
       <screen x="0" y="0" width="2560" height="1409" />
     </state>
     <state width="1287" height="712" key="XDebugger.FullValuePopup/0.0.2560.1409/-1920.0.1920.1050@0.0.2560.1409" timestamp="1591264462740" />
-    <state x="977" y="529" key="com.intellij.ide.util.TipDialog" timestamp="1592171884244">
+    <state x="977" y="529" key="com.intellij.ide.util.TipDialog" timestamp="1592176428525">
       <screen x="0" y="0" width="2560" height="1409" />
     </state>
     <state x="733" y="390" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1920.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591885121434" />
     <state x="-1187" y="394" key="com.intellij.ide.util.TipDialog/0.0.2560.1409/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1592149039137" />
-    <state x="977" y="529" key="com.intellij.ide.util.TipDialog/0.0.2560.1409/-1920.0.1920.1050@0.0.2560.1409" timestamp="1592171884244" />
+    <state x="977" y="529" key="com.intellij.ide.util.TipDialog/0.0.2560.1409/-1920.0.1920.1050@0.0.2560.1409" timestamp="1592176428525" />
     <state x="1090" y="622" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591033918544">
       <screen x="0" y="0" width="2560" height="1409" />
     </state>

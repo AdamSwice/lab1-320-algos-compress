@@ -45,7 +45,7 @@ public class StrategieHuff {
 
         try {
             //Calculer le facteur d'erreur du bitWriter
-            facteurErreur = compressedData.length() % 8;
+            facteurErreur = 8-(compressedData.length() % 8);
 
             //Saving JavaObject usefull for decompression of the file
             ArrayList<Object> a = new ArrayList<>();
