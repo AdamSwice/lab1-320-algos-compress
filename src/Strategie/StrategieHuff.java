@@ -52,7 +52,7 @@ public class StrategieHuff {
             OutputStream os = new FileOutputStream(new File(fileOutput));
             ObjectOutputStream o = new ObjectOutputStream(new BufferedOutputStream(os));
             a.add(facteurErreur);
-            a.add(freq);
+            a.add(root);
             o.writeObject(a);
             o.close();
 
