@@ -7,7 +7,7 @@ import java.io.*;
 import java.util.HashMap;
 
 public class StrategieLZW {
-
+    final static String binaryCodeLength = "%16s";
     public static void compress(String fileOutput, File toCompress) throws Exception {
         HashMap<String, Integer> dictio = new HashMap<>();
         int i;
@@ -16,7 +16,6 @@ public class StrategieLZW {
             char t = (char) i;
             dictio.put(Character.toString(t), i);
         }
-        //Buffered
         BitOutputStream outputStream = new BitOutputStream(fileOutput, false);
         FileInputStream fileInputStream = new FileInputStream(toCompress);
         BufferedInputStream bufferedInputStream = new BufferedInputStream(fileInputStream);
@@ -32,7 +31,7 @@ public class StrategieLZW {
                 prefix = combinaison;
             } else {
                 int code = dictio.get(prefix);
-                String binaryCode = String.format("%16s", Integer.toBinaryString(code)).replaceAll(" ", "0");
+                String binaryCode = String.format(binaryCodeLength, Integer.toBinaryString(code)).replaceAll(" ", "0");
                 bitWriter(outputStream, binaryCode);
                 if (dictio.size() == 65535) {
                     initializeDictioCompress(dictio, i);
@@ -46,12 +45,12 @@ public class StrategieLZW {
 
         if (dictio.containsKey(prefix)) {
             int code = dictio.get(prefix);
-            String binaryCode = String.format("%16s", Integer.toBinaryString(code)).replaceAll(" ", "0");
+            String binaryCode = String.format(binaryCodeLength, Integer.toBinaryString(code)).replaceAll(" ", "0");
             bitWriter(outputStream, binaryCode);
         } else {
             dictio.put(prefix, i);
             int code = dictio.get(prefix);
-            String binaryCode = String.format("%16s", Integer.toBinaryString(code)).replaceAll(" ", "0");
+            String binaryCode = String.format(binaryCodeLength, Integer.toBinaryString(code)).replaceAll(" ", "0");
             bitWriter(outputStream, binaryCode);
         }
         outputStream.close();

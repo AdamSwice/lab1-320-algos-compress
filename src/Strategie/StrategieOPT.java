@@ -9,6 +9,7 @@ import java.io.FileWriter;
 import java.util.HashMap;
 
 public class StrategieOPT {
+    final static String binaryCodeLength = "%20s";
     public static void compress(FileReader fileReader, String fileOutput) throws Exception {
         HashMap<String, Integer> dictio = new HashMap<>();
         int i;
@@ -27,7 +28,7 @@ public class StrategieOPT {
                 prefix = tempString;
             } else {
                 int code = dictio.get(prefix);
-                String binaryCode = String.format("%20s", Integer.toBinaryString(code)).replaceAll(" ","0");
+                String binaryCode = String.format(binaryCodeLength, Integer.toBinaryString(code)).replaceAll(" ","0");
                 bitWriter(outputStream, binaryCode);
                 if (dictio.size() == 1048575){
                     initializeDictioCompress(dictio, i);
@@ -41,16 +42,15 @@ public class StrategieOPT {
 
         if (dictio.containsKey(prefix)){
             int code = dictio.get(prefix);
-            String binaryCode = String.format("%20s", Integer.toBinaryString(code)).replaceAll(" ","0");
+            String binaryCode = String.format(binaryCodeLength, Integer.toBinaryString(code)).replaceAll(" ","0");
             bitWriter(outputStream, binaryCode);
         } else {
             dictio.put(prefix, i);
             int code = dictio.get(prefix);
-            String binaryCode = String.format("%20s", Integer.toBinaryString(code)).replaceAll(" ","0");
+            String binaryCode = String.format(binaryCodeLength, Integer.toBinaryString(code)).replaceAll(" ","0");
             bitWriter(outputStream, binaryCode);
         }
         fileReader.close();
-//        outputStream.flush();
         outputStream.close();
         long endTime = System.currentTimeMillis();
         System.out.println("duree: " + (endTime - startTime) + "ms");

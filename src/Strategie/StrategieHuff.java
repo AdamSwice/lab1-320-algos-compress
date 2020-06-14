@@ -4,7 +4,6 @@ package Strategie;
 import Bit.BitInputStream;
 import Bit.BitOutputStream;
 
-import java.awt.image.BufferedImage;
 import java.io.*;
 import java.util.*;
 
@@ -35,45 +34,53 @@ public class StrategieHuff {
 
 
     public static void compress(String data, String fileOutput) {
-        StringBuilder s = new StringBuilder();
 
-        for (int i = 0; i < data.length(); i++) {
-            if (!freq.containsKey(data.charAt(i))) {
-                freq.put(data.charAt(i), 0);
-            }
-            freq.put(data.charAt(i), freq.get(data.charAt(i)) + 1);
-        }
+        createFrequencyTable(data);
 
         root = buildTree(freq);
-        encode(root, new StringBuilder());
+        createEncodingMap(root, new StringBuilder());
 
-        for (int i = 0; i < data.length(); i++) {
-            char c = data.charAt(i);
-            s.append(encoding.get(c));
-        }
+        StringBuilder compressedData=encode(data);
+
 
         try {
             //Calculer le facteur d'erreur du bitWriter
-            facteurErreur = s.length() % 8;
+            facteurErreur = compressedData.length() % 8;
 
             //Saving JavaObject usefull for decompression of the file
             ArrayList<Object> a = new ArrayList<>();
             OutputStream os = new FileOutputStream(new File(fileOutput));
             ObjectOutputStream o = new ObjectOutputStream(new BufferedOutputStream(os));
             a.add(facteurErreur);
-            a.add(root);
+            a.add(freq);
             o.writeObject(a);
             o.close();
 
             //Saving the CompressedData
             BitOutputStream outputStream = new BitOutputStream(fileOutput, true);
-            bitWriter(outputStream, s.toString());
+            bitWriter(outputStream, compressedData.toString());
             outputStream.close();
             os.close();
 
         } catch (Exception e) {
         }
 
+    }
+    public static StringBuilder encode(String data){
+        StringBuilder compressedData = new StringBuilder();
+        for (int i = 0; i < data.length(); i++) {
+            char c = data.charAt(i);
+            compressedData.append(encoding.get(c));
+        }
+        return compressedData;
+    }
+    public static void createFrequencyTable(String data){
+        for (int i = 0; i < data.length(); i++) {
+            if (!freq.containsKey(data.charAt(i))) {
+                freq.put(data.charAt(i), 0);
+            }
+            freq.put(data.charAt(i), freq.get(data.charAt(i)) + 1);
+        }
     }
 
     public static void decompress(BitInputStream inputStream, String fileInput, String fileOutput) {
@@ -87,6 +94,7 @@ public class StrategieHuff {
 
         //Decompression of the code by iterating throw the tree
         HuffmanNode temp = root;
+
         for (int i = 0; i < compressedData.length(); i++) {
             int j = Integer.parseInt(String.valueOf(compressedData.charAt(i)));
 
@@ -112,7 +120,7 @@ public class StrategieHuff {
         writeToFile(uncompressedData, fileOutput);
     }
 
-    private static void bitWriter(BitOutputStream writer, String bitString) throws Exception {
+    private static void bitWriter(BitOutputStream writer, String bitString) {
         bitString += "";
         char[] chars = bitString.toCharArray();
         int bit;
@@ -137,21 +145,21 @@ public class StrategieHuff {
 
         while (priorityQueue.size() > 1) {
 
-            HuffmanNode e1 = priorityQueue.poll();
-            HuffmanNode e2 = priorityQueue.poll();
+            HuffmanNode node1 = priorityQueue.poll();
+            HuffmanNode node2 = priorityQueue.poll();
 
 
             HuffmanNode combination = new HuffmanNode();
-            combination.frequency = e1.frequency + e2.frequency;
-            combination.left = e1;
-            combination.right = e2;
+            combination.frequency = node1.frequency + node2.frequency;
+            combination.left = node1;
+            combination.right = node2;
 
             priorityQueue.add(combination);
         }
         return priorityQueue.peek();
     }
 
-    private static void encode(HuffmanNode node, StringBuilder prefix) {
+    private static void createEncodingMap(HuffmanNode node, StringBuilder prefix) {
 
         if (node != null) {
             if (node.isLeaf()) {
@@ -159,11 +167,11 @@ public class StrategieHuff {
 
             } else {
                 prefix.append('0');
-                encode(node.left, prefix);
+                createEncodingMap(node.left, prefix);
                 prefix.deleteCharAt(prefix.length() - 1);
 
                 prefix.append('1');
-                encode(node.right, prefix);
+                createEncodingMap(node.right, prefix);
                 prefix.deleteCharAt(prefix.length() - 1);
             }
         }
@@ -212,7 +220,7 @@ public class StrategieHuff {
         }
     }
 
-    //Pure copier coller de stackOverflow Jvais le changer un peu (Permet de calculer la taille d'un object dans un file).
+    //L'idee proviens de stackOverFlow
     public static int sizeof(Object obj) {
         try {
             ByteArrayOutputStream byteOutputStream = new ByteArrayOutputStream();
