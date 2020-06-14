@@ -16,11 +16,11 @@ public class main {
 //        String fileIn = args[2];
 //        String fileOut = args[3];
         
-        String choixAlgo = "lzw";
-        String choixCompress = "d";
-        String fileIn = "C:/Users/Swicy/Desktop/lab1-320-algos-compress/src/biblec.txt";
-        String fileOut = "C:/Users/Swicy/Desktop/lab1-320-algos-compress/src/bibled.txt";
-        Utilitaire.validator(choixAlgo, choixCompress, fileIn, fileOut);
+//        String choixAlgo = "lzw";
+//        String choixCompress = "d";
+//        String fileIn = "C:/Users/Swicy/Desktop/lab1-320-algos-compress/src/biblec.txt";
+//        String fileOut = "C:/Users/Swicy/Desktop/lab1-320-algos-compress/src/bibled.txt";
+//        Utilitaire.validator(choixAlgo, choixCompress, fileIn, fileOut);
 
 //        String choixAlgo = "lzw";
 //        String choixCompress = "d";
@@ -30,11 +30,11 @@ public class main {
        // String fileOut = "C:/Users/faute/OneDrive/Documents/GitHub/lab1-320-algos-compress/src/Red-Smoke-Transparent-ImagesD-PNG.png";
 //        Utilitaire.validator(choixAlgo, choixCompress, fileIn, fileOut);
 
-      /*  String choixAlgo = "huff";
+        String choixAlgo = "lzw";
         String choixCompress = "c";
         String fileIn = "D:/lab1-320-algos-compress/src/exemple.txt";
-        String fileOut = "D:/lab1-320-algos-compress/src/Test/Huff/exemple.txt";
-        Utilitaire.validator(choixAlgo, choixCompress, fileIn, fileOut);*/
+        String fileOut = "D:/lab1-320-algos-compress/src/15exemple.txt";
+        Utilitaire.validator(choixAlgo, choixCompress, fileIn, fileOut);
 
 //        String choixAlgo = "huff";
 //        String choixCompress = "d";
