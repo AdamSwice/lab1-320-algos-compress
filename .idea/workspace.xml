@@ -8,7 +8,8 @@
   <component name="ChangeListManager">
     <list default="true" id="52b29df3-de38-49c6-ab21-d63dc2faee33" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Strategie/StrategieHuff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Strategie/StrategieHuff.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Strategie/StrategieLZW.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Strategie/StrategieLZW.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Strategie/StrategieOPT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Strategie/StrategieOPT.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +128,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592172322341</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="fix suite au revert commit">
+      <created>1592176612040</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1592176612040</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -154,10 +162,14 @@
     <option name="LAST_COMMIT_MESSAGE" value="fix suite au revert commit" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1031" y="555" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1592176574251">
+    <state x="736" y="360" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1592177321770">
       <screen x="0" y="0" width="2560" height="1409" />
     </state>
-    <state x="1031" y="555" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.2560.1409/-1920.0.1920.1050@0.0.2560.1409" timestamp="1592176574251" />
+    <state x="736" y="360" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1409/-1920.0.1920.1050@0.0.2560.1409" timestamp="1592177321770" />
+    <state x="1031" y="555" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1592177156460">
+      <screen x="0" y="0" width="2560" height="1409" />
+    </state>
+    <state x="1031" y="555" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.2560.1409/-1920.0.1920.1050@0.0.2560.1409" timestamp="1592177156460" />
     <state x="1130" y="594" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1591262359724">
       <screen x="0" y="0" width="2560" height="1409" />
     </state>
@@ -174,12 +186,12 @@
       <screen x="0" y="0" width="2560" height="1409" />
     </state>
     <state x="1593" y="152" width="801" height="1039" key="#xdebugger.evaluate/0.0.2560.1409/-1920.0.1920.1050@0.0.2560.1409" timestamp="1592162815511" />
-    <state x="-1398" y="90" key="CommitChangelistDialog2" timestamp="1592172320643">
-      <screen x="-1920" y="0" width="1920" height="1050" />
+    <state x="696" y="121" key="CommitChangelistDialog2" timestamp="1592176611396">
+      <screen x="0" y="0" width="2560" height="1409" />
     </state>
     <state x="522" y="89" key="CommitChangelistDialog2/0.0.1920.1040/-1920.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1592108404327" />
     <state x="-1398" y="90" key="CommitChangelistDialog2/0.0.2560.1409/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1592172320643" />
-    <state x="696" y="121" key="CommitChangelistDialog2/0.0.2560.1409/-1920.0.1920.1050@0.0.2560.1409" timestamp="1591263469958" />
+    <state x="696" y="121" key="CommitChangelistDialog2/0.0.2560.1409/-1920.0.1920.1050@0.0.2560.1409" timestamp="1592176611396" />
     <state width="399" height="466" key="DebuggerActiveHint" timestamp="1589820005863">
       <screen x="0" y="0" width="2560" height="1409" />
     </state>
@@ -240,16 +252,16 @@
     <state width="1877" height="221" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591887171015" />
     <state width="1877" height="496" key="GridCell.Tab.1.right/0.0.2560.1409/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1590079581099" />
     <state width="2517" height="314" key="GridCell.Tab.1.right/0.0.2560.1409/-1920.0.1920.1050@0.0.2560.1409" timestamp="1592162823594" />
-    <state x="782" y="347" key="SettingsEditor" timestamp="1592176598124">
+    <state x="782" y="347" key="SettingsEditor" timestamp="1592177275498">
       <screen x="0" y="0" width="2560" height="1409" />
     </state>
-    <state x="782" y="347" key="SettingsEditor/0.0.2560.1409/-1920.0.1920.1050@0.0.2560.1409" timestamp="1592176598124" />
-    <state x="-1265" y="326" key="Vcs.Push.Dialog.v2" timestamp="1592172328038">
-      <screen x="-1920" y="0" width="1920" height="1050" />
+    <state x="782" y="347" key="SettingsEditor/0.0.2560.1409/-1920.0.1920.1050@0.0.2560.1409" timestamp="1592177275498" />
+    <state x="873" y="438" key="Vcs.Push.Dialog.v2" timestamp="1592176625646">
+      <screen x="0" y="0" width="2560" height="1409" />
     </state>
     <state x="655" y="323" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1592108410430" />
     <state x="-1265" y="326" key="Vcs.Push.Dialog.v2/0.0.2560.1409/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1592172328038" />
-    <state x="873" y="438" key="Vcs.Push.Dialog.v2/0.0.2560.1409/-1920.0.1920.1050@0.0.2560.1409" timestamp="1591263407862" />
+    <state x="873" y="438" key="Vcs.Push.Dialog.v2/0.0.2560.1409/-1920.0.1920.1050@0.0.2560.1409" timestamp="1592176625646" />
     <state width="1287" height="712" key="XDebugger.FullValuePopup" timestamp="1591264462740">
       <screen x="0" y="0" width="2560" height="1409" />
     </state>
@@ -295,79 +307,5 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <last-edited>lab1-320-algos-compress:jar</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-                <option value="0.5" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <last-edited>No facets are configured</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
   </component>
 </project>

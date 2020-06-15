@@ -88,7 +88,7 @@ public class StrategieLZW {
             for (char aChar : chars) bufferedOutputStream.write(aChar);
         }
         int oldValue = code;
-        while (!(negativeBitChecker = readBit(inputStream)).contains("-1") && !negativeBitChecker.isEmpty()) {
+        while (!(negativeBitChecker = readBit(inputStream)).contains("-1") && !negativeBitChecker.isEmpty() && negativeBitChecker.length() == 20) {
             code = Integer.parseInt(negativeBitChecker, 2);
 
             if (dictio.containsKey(code)) {
